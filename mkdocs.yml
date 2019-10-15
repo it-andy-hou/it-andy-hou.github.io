@@ -22,18 +22,23 @@ theme:
 
 # Page tree
 nav:
-  - Home: index.md
-  - Post:
-    - Admonition: post.md
-  - Travel:
+  - 主页: index.md
+  - 博文:
+    - 索引: post.md
+  - 旅行:
     - travel: travel.md
-  - Note:
+  - 笔记:
     - Note导航 : note.md
-    - 手机相关 : note/phone.md
-  - Photo:
+    - 手机相关 : note/phone/
+  - 游戏:
+    - Game: game.md
+  - 照片:
     - 照片导航: photo.md
-  - Video:
+  - 影视:
     - Admonition: video.md
-  - About: 
+  - 表情包: 
+    - 基础包: meme.md
+    - 熊猫: meme/meme_panda/
+  - 关于: 
     - 链接导航: links.md
     - 合作联系: contact.md
