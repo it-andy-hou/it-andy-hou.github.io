@@ -2,6 +2,8 @@ mkdocs build
 del /a /f /s /q D:\site
 md D:\site
 xcopy site\*.* D:\site /S /F /R /Y /E
+xcopy CNAME D:\site /S /F /R /Y /E
+xcopy README.md D:\site /S /F /R /Y /E
 cd D:\Documents\GitHub\it-andy-hou.github.io\
 rd /s /Q site
 echo ping -n 5 127.0.0.1 ^> nul > D:\test.bat
