@@ -1,7 +1,7 @@
 mkdocs build
 del /a /f /s /q D:\site
-xcopy site D:\site
+xcopy site\*.* D:\site
 cd %cd%
-del /a /f /s /q site
+rd /s /Q site
 rem git checkout master
 pause
