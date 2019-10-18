@@ -17,6 +17,9 @@
 
 原本以为是单机游戏，结果发现也是要联网的，所以没办法断网期间解闷用，偶尔无聊玩玩还是可以的。
 
+GooglePlay游戏地址：[https://play.google.com/store/apps/details?id=com.mobirate.DeadAheadTactics](https://play.google.com/store/apps/details?id=com.mobirate.DeadAheadTactics)
+
+
 <hr>
 
 <!-- 来必力City版安装代码 -->
@@ -26,11 +29,11 @@
        var j, e = d.getElementsByTagName(s)[0];
 
        if (typeof LivereTower === 'function') { return; }
-
+    
        j = d.createElement(s);
        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
        j.async = true;
-
+    
        e.parentNode.insertBefore(j, e);
    })(document, 'script');
 	</script>
