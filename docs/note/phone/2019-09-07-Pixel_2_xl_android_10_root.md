@@ -1,4 +1,4 @@
-# Google Piexl2 xl update Android 10 & root
+# Google Pixel 2 xl update Android 10 & root
 
 ## 备份
 
@@ -86,4 +86,23 @@ fastboot flash boot twrp-3.3.0-0-taimen.img
 剩下就是install  Magisk-v19.3.zip ；安装APK  懒的写了就这样；Magisk 作者再10正式版出来以后 频繁更新 已经解决了之前遇到坑，这里本来还想提一提，算了。
 
 
+<hr>
 
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NzA4OC8yMzU4OA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
