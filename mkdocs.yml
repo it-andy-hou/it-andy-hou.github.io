@@ -26,19 +26,20 @@ nav:
   - 博文:
     - 索引: post.md
   - 旅行:
-    - travel: travel.md
+    - ✈️ travel: travel.md
   - 笔记:
-    - Note导航 : note.md
+    - 📑 笔记导航 : note.md
     - 📱 手机相关 : note/Phone/
   - 游戏:
     - 🎮 Game: game.md
   - 摄影:
     - 照片导航: photo.md
   - 影视:
-    - Admonition: video.md
+    - 🎥 影视: video.md
+    - 🔞 PH: video/PH/
   - 表情包: 
-    - 基础包: meme.md
-    - 熊猫: meme/meme_panda/
+    - 💩 沙雕/装逼: meme.md
+    - 🐼 熊猫: meme/meme_panda/
   - 关于: 
     - 链接导航: links.md
     - 合作联系: contact.md
