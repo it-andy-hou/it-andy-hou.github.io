@@ -6,3 +6,4 @@
 
 <!-- 1 -->
 > <div style="position:relative;"><a href="2015-12-12-Nexus5_android_6_root/"><img src="/imgs/banner/2015-12-12-Nexus5_android_6_root.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📱 Nexus5 </font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📱 Google Nexus5 android 6.0.1 & root</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Android 6.0, Nexus5, root　2015-12-12</font>](phone/2015-12-12-Nexus5_android_6_root.md)
+
