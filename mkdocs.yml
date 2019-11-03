@@ -43,3 +43,5 @@ nav:
   - 关于: 
     - 链接导航: links.md
     - 合作联系: contact.md
+
+google_analytics: ['UA-66508870-1', 'hi-andy.com']
