@@ -8,7 +8,7 @@
     <div style="margin: 0px 10px 10px;flex-basis: width:200px;height:200px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
         <img src="/imgs/meme/会议室.png" width="200" height="262">
     </div>
-    <div style="margin: 0px 10px 10px;flex-basis: width:300px;height:486px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
+    <div style="margin: 0px 10px 10px;flex-basis: width:200px;height:324px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
         <img src="/imgs/meme/0073tLPGgy1g5qbv8i56tj30nn12baik.jpg" width="200" height="324">
     </div>
 </div>
