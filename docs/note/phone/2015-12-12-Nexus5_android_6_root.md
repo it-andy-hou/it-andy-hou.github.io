@@ -173,7 +173,7 @@ fastboot flash userdata userdata.img</pre>
 
 7.一个unlock bootloader的选择确认页面会出现。用音量来选择到“YES,”，用电源键来确定。
 
-![](../../imgs/note/phone/7afc57f8jw1eyw5dnkn33j20ep09vafm.jpg.jpg)
+![](../../imgs/note/phone/7afc57f8jw1eyw5dnkn33j20ep09vafm.jpg)
 
 8.这时你手机上的所有数据都将被抹去,LOCK STATE将变成unlocked。不应该超过一两分钟。
 
