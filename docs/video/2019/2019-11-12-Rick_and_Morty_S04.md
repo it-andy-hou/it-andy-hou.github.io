@@ -16,22 +16,6 @@
 
  [https://www.acfun.cn/bangumi/aa6000686](https://www.acfun.cn/bangumi/aa6000686 ) 
 
-### 电波字幕组
-
- 
-
-| 名称                                                         | 百度网盘                         | 提取码 |
-| ------------------------------------------------------------ | -------------------------------- | ------ |
-| 瑞克与莫蒂.Rick.and.Morty.S04E01.WEB-720p.1280X720.中英双语-电波字幕组.mp4 | [百度网盘](http://t.cn/Air5Ij5j) | cqpb   |
-| 瑞克与莫蒂.Rick.and.Morty.S04E02.WEB-720p.1280X720.中英双语-电波字幕组.mp4 | [百度网盘](http://t.cn/AidZoSC9) | a272   |
-| 瑞克与莫蒂.Rick.and.Morty.S04E03.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E04.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E05.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E06.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E07.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E08.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E09.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
-| 瑞克与莫蒂.Rick.and.Morty.S04E10.WEB-720p.1280X720.中英双语-电波字幕组.mp4 |                                  |        |
 
 ### UnIon字幕组
 
