@@ -1,4 +1,4 @@
-# 👴👦 Rick and Morty 第四季 下载
+# 👴👦 Rick and Morty 第四季 <s>下载</s>
 
 ![9dea05e2ly1g8um3vp65wj20xc1e01fu](\imgs\video\2019\9dea05e2ly1g8um3vp65wj20xc1e01fu.jpg)
 
@@ -16,21 +16,8 @@
 
  [https://www.acfun.cn/bangumi/aa6000686](https://www.acfun.cn/bangumi/aa6000686 ) 
 
-
-### UnIon字幕组
-
-| 名称                                                         | 磁力链接                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 瑞克和莫蒂.Rick.and.Morty.S04E01.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 | [磁力链接](magnet:?xt=urn:btih:9d71b7a0ec88277870171e4c9e9c2e032f98834e) |
-| 瑞克和莫蒂.Rick.and.Morty.S04E02.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 | [磁力链接](magnet:?xt=urn:btih:b06cc7d39357fe933b282c9491933048b2d4f286) |
-| 瑞克和莫蒂.Rick.and.Morty.S04E03.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 | [电驴链接](ed2k://%7Cfile%7C%E7%91%9E%E5%85%8B%E5%92%8C%E8%8E%AB%E8%92%82.Rick.and.Morty.S04E03.%E5%8F%8C%E8%AF%AD%E5%AD%97%E5%B9%95.1080p.Web-rip.x264-UnIon%E5%AD%97%E5%B9%95%E7%BB%84.mp4%7C453070945%7C1521131bfaf23148b63dc8d1792b5384%7Ch=7ggtqggt7kudy6dirgceuyuqymejjxi5%7C/)                                                             |
-| 瑞克和莫蒂.Rick.and.Morty.S04E04.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 | [电驴链接](ed2k://|file|瑞克和莫蒂.Rick.and.Morty.S04E04.双语字幕.1080p.Web-rip.x264-UnIon字幕组.mp4|546006210|e738188f7d6f192f413e6e7976b3bf14|h=gy5fuehbhdnijictbvzm5kdtgnlxijs4|/)                                                           |
-| 瑞克和莫蒂.Rick.and.Morty.S04E05.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
-| 瑞克和莫蒂.Rick.and.Morty.S04E06.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
-| 瑞克和莫蒂.Rick.and.Morty.S04E07.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
-| 瑞克和莫蒂.Rick.and.Morty.S04E08.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
-| 瑞克和莫蒂.Rick.and.Morty.S04E09.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
-| 瑞克和莫蒂.Rick.and.Morty.S04E10.双语字幕.720p.BluRay.x264-UnIon字幕组.mp4 |                                                              |
+更新
+<s>UnIon字幕组 电波字幕组</s>
 
 
 
