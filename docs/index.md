@@ -1,6 +1,12 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=3950543&auto=1&height=32"></iframe>
 
 <hr>
+<!-- 6 -->
+> <div style="position:relative;"><a href="/game/2020/2020-04-03_Just_Dance/"><img src="/imgs/banner/2020-04-03_Just_Dance.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🤠 Switch 用户白嫖Just_Dance</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🤠 Switch 用户白嫖Just_Dance教程</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Switch , Just_Dance , Wii ,模拟器　2020-04-03</font>](game/2020/2020-04-03_Just_Dance.md)
+
+
+
+<hr>
 <!-- 5 -->
 > <div style="position:relative;"><a href="/post/2020/2020-03-23-virus/"><img src="/imgs/banner/2020-03-23-virus.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　💔 是新冠还是？ </font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　💔 是新冠还是？</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　新冠，2020　2020-03-23</font>](post/2020/2020-03-23-virus.md)
 
