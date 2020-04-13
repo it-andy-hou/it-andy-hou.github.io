@@ -1,2 +1,6 @@
+<!-- 2 -->
+> <div style="position:relative;"><a href="/game/2020/2020-04-03_Just_Dance/"><img src="/imgs/banner/2020-04-03_Just_Dance.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🤠 Switch 用户白嫖Just_Dance</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🤠 Switch 用户白嫖Just_Dance教程</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Switch , Just_Dance , Wii ,模拟器　2020-04-03</font>](game/2020/2020-04-03_Just_Dance.md)
+
+<hr>
 <!-- 1 -->
 > <div style="position:relative;"><a href="/game/2019/2019-10-17-DEAD_AHEAD_ZOMBIE_WARFARE/"><img src="/imgs/banner/2019-10-17-DEAD_AHEAD_ZOMBIE_WARFARE.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🚍 像素僵尸刷怪游戏推荐</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🚍 画风超赞的 像素刷刷刷 僵尸打怪升级穿装备游戏</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　DEAD AHEAD, Zombie, Android, 　2019-10-15</font>](game/2019/2019-10-17-DEAD_AHEAD_ZOMBIE_WARFARE.md)
