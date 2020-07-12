@@ -32,11 +32,11 @@ nav:
     - 📱 手机相关: note/Phone/
   - 游戏:
     - 🎮 Game: game.md
-  - 摄影:
-    - 照片导航: photo.md
   - 影视:
     - 🎥 影视: video.md
     - 🔞 PH: video/PH/
+  - 收藏: 
+    - 💖 收藏: favlist.md
   - 表情包: 
     - 💩 沙雕/装逼: meme.md
     - 📑 模板: meme/meme_template.md
