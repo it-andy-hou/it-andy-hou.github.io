@@ -1,3 +1,6 @@
+<!-- 4 -->
+> <div style="position:relative;"><a href="2020-09-09-Pixel_2_xl_android_11_root/"><img src="/imgs/banner/2020-09-09-piexl2_xl_android_11_root.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📱 Google Piexl2 xl</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📱 Google Piexl2 xl Android 11 & root</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Android 11, Piexl2 xl, root　2020-09-09</font>](phone/2020-09-09-Pixel_2_xl_android_11_root.md)
+
 <!-- 3 -->
 > <div style="position:relative;"><a href="2019-09-07-Pixel_2_xl_android_10_root/"><img src="/imgs/banner/2019-09-07-piexl2_xl_android_10_root.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📱 Google Piexl2 xl</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📱 Google Piexl2 xl Android 10 & root</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Android 10, Piexl2 xl, root　2019-09-07</font>](phone/2019-09-07-Pixel_2_xl_android_10_root.md)
 
