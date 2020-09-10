@@ -45,7 +45,7 @@ adb-fastboot-v4
 **taimen-rp1a.200720.009-factory-f2d162ef.zip**
 
 - image-taimen-rp1a.200720.009.zip
-    - boot.img
+    - **boot.img**
     - dtbo.img
     - system.img
     - system_other.img
@@ -56,10 +56,41 @@ adb-fastboot-v4
 
 **radio-taimen-g8998-00034-2006052136.img**
 
-## 刷入 recovery.img
+## 装系统
 ```shell
-fastboot flash boot twrp-3.4.0-1-taimen.img
+# 自动
+flash-all.bat
+
+# 手动
+fastboot flash bootloader bootloader-taimen-tmz30m.img
+fastboot reboot-bootloader
+
+fastboot flash radio radio-taimen-g8998-00034-2006052136.img
+fastboot reboot-bootloader
+
+fastboot update image-taimen-rp1a.200720.009.zip
+
 ```
+
+## magisk 安装 & root
+
+1. 安装上面已经下载好的 magisk 金丝雀版
+[https://magisk.dw.qzrom.cn/topjohnwu/magisk_files/canary/app-debug.apk](https://magisk.dw.qzrom.cn/topjohnwu/magisk_files/canary/app-debug.apk)
+
+2. 拷贝 **image-taimen-rp1a.200720.009.zip** 解压出的 **boot.img** 到手机根目录
+
+3. 打开 magisk 点击安装 Manager 安装完成，点击magisk 安装，**选择并修补一个文件** 选择手机根目录中的 **boot.img**  之后程序会刷入修改 生成 **magisk_patched.img**，将 **magisk_patched.img** 拷贝到电脑前。
+
+4. bootloader 模式，将 magisk_patched.img 刷入 `fastboot flash boot magisk_patched.img`
+
+5. 刷入完成后 开机（开机可能要很久等就完事了） 查看 magisk 状态
+
+
+![](../../imgs/note/phone/20200910135150.png)
+之后开始漫长的恢复。
+
+## 结束语
+每年这个时候刷机我都会选择删掉系统所有数据重装，当然前提是备份好自己的重要数据
 
 <hr>
 
