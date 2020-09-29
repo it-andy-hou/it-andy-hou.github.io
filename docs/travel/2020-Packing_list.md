@@ -18,16 +18,18 @@
 　<input type="checkbox" /> 👟👣鞋子、袜子<br>
 　<input type="checkbox" /> 👙 内衣、内裤、睡衣<br>
 　<input type="checkbox" /> 👓👒 眼镜、帽子<br>
+<input type="checkbox" /> 😷疫情用品<br>
+　<input type="checkbox" /> 口罩、洗手液、手套<br>
 <input type="checkbox" /> 🛁日常用品<br>
-　<input type="checkbox" /> 🚿 沐浴露、洗发水、洗面奶、面膜<br>
+　<input type="checkbox" /> 🚿 沐浴露、洗发水、洗面奶、面膜、保鲜袋<br>
 　<input type="checkbox" /> 💄 化妆包<br>
 　<input type="checkbox" /> 🔪 剃须刀<br>
 　<input type="checkbox" /> 👓 眼镜、墨镜、隐形眼镜盒子、护理液体<br>
-<input type="checkbox" /> 💊 感冒药、拉肚子药、创可贴<br>
+<input type="checkbox" /> 💊 感冒药、拉肚子药、消炎药、创可贴<br>
 <input type="checkbox" /> 👾 数码产品<br>
 　<input type="checkbox" /> 📸 相机、电池、内存卡（读卡器）、充电器、镜头<br>
 　<input type="checkbox" /> 💻 电脑、充电器<br>
-　<input type="checkbox" /> 💾 U盘、OTG<br>
+　<input type="checkbox" /> 💾 U盘、OTG、充电宝<br>
 　<input type="checkbox" /> 📲 4 U口充电器、IOS、typec 充电线<br>
 　<input type="checkbox" /> 🎧 耳机<br>
 <input type="checkbox" /> 🌌其他用品<br>
@@ -42,5 +44,5 @@
 <input type="checkbox" /> 💻 是否开启电脑（远程跳板办公）<br>
 <input type="checkbox" /> 🚮倒垃圾<br>
 <input type="checkbox" /> 🆔📱🔑 💰 身份证 手机 钥匙 钱包 （伸手要钱）<br>
-
+<input type="checkbox" /> 😷口罩<br>
 </form>
