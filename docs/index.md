@@ -1,4 +1,10 @@
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=3950543&auto=1&height=32"></iframe> -->
+
+<hr>
+<!-- 9 -->
+> <div style="position:relative;"><a href="/post/2020/2020-11-25-essays/"><img src="/imgs/banner/2020-05-25-essays.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📔 11月杂想</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📔 11月杂想</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2020-11-25</font>](post/2020/2020-11-25-essays.md)
+
+
 <hr>
 <!-- 8 -->
 > <div style="position:relative;"><a href="/note/phones/2020-09-09-Pixel_2_xl_android_11_root/"><img src="/imgs/banner/2020-09-09-piexl2_xl_android_11_root.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📱 Google Piexl2 xl</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📱 Google Piexl2 xl Android 11 & root</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Android 11, Piexl2 xl, root　2020-09-09</font>](note/phones/2020-09-09-Pixel_2_xl_android_11_root.md)
