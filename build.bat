@@ -1,2 +1,2 @@
-mkdocs build
+python -m mkdocs build
 pause
