@@ -2,6 +2,14 @@
 
 > 破解系统版本要高于正版系统，破解系统升级后，正版系统就可以升级了，没必要升级最新系统，除非游戏必须要求最低系统版本。
 
+## B站视频/ Youtube视频
+
+<iframe width="820" height="460"  src="https://player.bilibili.com/player.html?aid=415582447&bvid=BV1dV41187W5&cid=265141499&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+<iframe width="820" height="460" src="https://www.youtube.com/embed/Kzic2XvDFH4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## **升级文件**
 
 - ChoiDujourNX.nro  （升级工具）
@@ -51,8 +59,6 @@
 8. 重启等待进度条走完就行了。
 
    ![2020-12-10_221906](../../imgs\note\switch\2020-12-10_221906.png)
-
-
 
 
 
