@@ -1,7 +1,7 @@
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=3950543&auto=1&height=32"></iframe> -->
 <hr>
 <!-- 10 -->
-> <div style="position:relative;"><a href="/note/switch/2020-12-10-Switch_update_10.2.0/"><img src="/imgs/banner/2020-12-10-Switch_update_10.2.0.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎮 switch </font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎮 switch TX 10.2.0</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　Android 6.0, switch, 10.2.0　2020-12-10</font>](/note/switch/2020-12-10-Switch_update_10.2.0.md)
+> <div style="position:relative;"><a href="/note/switch/2020-12-10-Switch_update_10.2.0/"><img src="/imgs/banner/2020-12-10-Switch_update_10.2.0.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎮 switch </font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎮 switch TX 10.2.0</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　switch, 10.2.0　2020-12-10</font>](/note/switch/2020-12-10-Switch_update_10.2.0.md)
 
 
 <hr>
