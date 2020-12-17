@@ -24,31 +24,31 @@ onload = function() {
         $elem.style.top = (y - 20) + "px";
         clearInterval(anim);
         switch (++click_cnt) {
-            case 10:
+            case 1:
                 $elem.innerText = "OωO";
                 break;
-            case 20:
+            case 2:
                 $elem.innerText = "(๑•́ ∀ •̀๑)";
                 break;
-            case 30:
+            case 3:
                 $elem.innerText = "(๑•́ ₃ •̀๑)";
                 break;
-            case 40:
+            case 4:
                 $elem.innerText = "(๑•̀_•́๑)";
                 break;
-            case 50:
+            case 5:
                 $elem.innerText = "（￣へ￣）";
                 break;
-            case 60:
+            case 6:
                 $elem.innerText = "(╯°口°)╯(┴—┴";
                 break;
-            case 70:
+            case 7:
                 $elem.innerText = "૮( ᵒ̌皿ᵒ̌ )ა";
                 break;
-            case 80:
+            case 8:
                 $elem.innerText = "╮(｡>口<｡)╭";
                 break;
-            case 90:
+            case 9:
                 $elem.innerText = "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃";
                 break;
             case 100:
