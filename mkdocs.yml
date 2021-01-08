@@ -33,14 +33,16 @@ nav:
     - 🎮 Switch: note/switch/
   - 游戏:
     - 🎮 Game: game.md
-  - 视频:
-    - 🎥 视频: video.md
   - 收藏: 
     - 💖 收藏: favlist.md
+  - 工具: 
+    - 🔨 工具导航: tools.md
   - 表情包: 
     - 💩 沙雕/装逼: meme.md
     - 📑 模板: meme/meme_template.md
     - 🐼 熊猫: meme/meme_panda/
+  - 捐赠/打赏: 
+    - 捐赠/打赏: donate.md
   - 关于: 
     - 链接导航: links.md
     - 合作联系: contact.md
