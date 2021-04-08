@@ -5,8 +5,8 @@
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
     <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+    <!-- <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button> -->
+    <!-- <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button> -->
   </div>
 </script>
  
@@ -31,15 +31,12 @@ layui.use('table', function(){
     ,title: '用户数据表'
     ,cols: [[
       {type: 'checkbox', fixed: 'left'}
-      // ,{field:'email', title:'邮箱', width:150, templet: function(res){
-      //   return '<em>'+ res.pic +'</em>'
-      // }}
-      ,{field:'id', width:100, title: '番号', sort: true}
+      ,{field:'id', width:100, title: '番号', sort: true, fixed: 'left'}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:210, title: '名称'}
-      ,{field:'score', width:80, title: '评分', sort: true}
+      ,{field:'jav', width:220, title: '名称'}
       ,{field:'date', width:110, title: '发行日期', sort: true}
-      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:75,}
+      ,{fixed: 'right',field:'score', width:75, title: '评分', sort: true}
+      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:70,}
     ]]
   });
   
