@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css"  media="all">
-
  
-<table class="layui-hide" id="test" lay-filter="test"></table>
+<table class="layui-hide" id="test" style="layui-btn background-color: #333;" lay-filter="test"></table>
  
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
@@ -37,10 +36,10 @@ layui.use('table', function(){
       // }}
       ,{field:'id', width:100, title: '番号', sort: true}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:180, title: '名称'}
-      ,{field:'score', width:75, title: '评分', sort: true}
-      ,{field:'date', width:140, title: '发行日期', sort: true}
-      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:80}
+      ,{field:'jav', width:150, title: '名称'}
+      ,{field:'score', width:125, title: '评分', sort: true}
+      ,{field:'date', width:120, title: '发行日期', sort: true}
+      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:80 ,}
     ]]
   });
   
@@ -74,7 +73,7 @@ layui.use('table', function(){
                 "start": 0, //初始显示的图片序号，默认0
                 "data": [   //相册包含的图片，数组格式
                   {
-                    "alt": data.id,
+                    "alt": data.id + " " +data.jav,
                     "src": data.pics, //原图地址
                   }
                 ]
