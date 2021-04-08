@@ -33,11 +33,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
-        <title>🔞 JAV收藏 - 安迪小站</title>
+        <title>🔞 JAV收藏打分 - 安迪小站</title>
       
     
     
@@ -131,7 +131,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                🔞 JAV收藏
+                🔞 JAV收藏打分
               
             </span>
           
@@ -251,7 +251,7 @@
     <li class="md-tabs__item">
       
         <a href="./" class="md-tabs__link md-tabs__link--active">
-          收藏&点评
+          收藏
         </a>
       
     </li>
@@ -512,11 +512,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
-      收藏&点评
+      收藏
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        收藏&点评
+        收藏
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -533,8 +533,8 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="🔞 JAV收藏" class="md-nav__link md-nav__link--active">
-      🔞 JAV收藏
+    <a href="./" title="🔞 JAV收藏打分" class="md-nav__link md-nav__link--active">
+      🔞 JAV收藏打分
     </a>
     
   </li>
@@ -702,12 +702,26 @@
               
                 
                 
-                  <h1>🔞 JAV收藏</h1>
+                  <h1>🔞 JAV收藏打分</h1>
                 
                 <p><link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css"  media="all"></p>
-<table class="layui-hide" id="test"></table>
+<table class="layui-hide" id="test" style="layui-btn background-color: #333;" lay-filter="test"></table>
+
+<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+  </div>
+</script>
+
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">封面</a>
+</script>
+
 <script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
-<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
 
 <script>
 layui.use('table', function(){
@@ -715,15 +729,62 @@ layui.use('table', function(){
 
   table.render({
     elem: '#test'
-    ,url:'https://hi-andy.com/files/jav_data.json'
-    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    ,url:'http://127.0.0.1:8090/files/jav_data.json'
+    // ,url:'https://hi-andy.com/files/jav_data.json'
+    ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+    ,defaultToolbar: ['filter', 'exports', 'print']
+    ,title: '用户数据表'
     ,cols: [[
-      {field:'id', width:110, title: '番号', sort: true}
+      {type: 'checkbox', fixed: 'left'}
+      // ,{field:'email', title:'邮箱', width:150, templet: function(res){
+      //   return '<em>'+ res.pic +'</em>'
+      // }}
+      ,{field:'id', width:100, title: '番号', sort: true}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:290, title: '名称'}
-      ,{field:'score', width:75, title: '评分', sort: true}
-      ,{field:'date', width:150, title: '发行日期', sort: true}
+      ,{field:'jav', width:150, title: '名称'}
+      ,{field:'score', width:125, title: '评分', sort: true}
+      ,{field:'date', width:120, title: '发行日期', sort: true}
+      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:80 ,}
     ]]
+  });
+
+  //头工具栏事件
+  table.on('toolbar(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+      case 'isAll':
+        layer.msg(checkStatus.isAll ? '全选': '未全选');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    console.log(data)
+    if(obj.event === 'edit'){
+        layer.photos({
+        photos: {
+                "title": "", //相册标题
+                "id": 123, //相册id
+                "start": 0, //初始显示的图片序号，默认0
+                "data": [   //相册包含的图片，数组格式
+                  {
+                    "alt": data.id + " " +data.jav,
+                    "src": data.pics, //原图地址
+                  }
+                ]
+              }
+      });
+    }
   });
 });
 </script>
@@ -799,14 +860,14 @@ layui.use('table', function(){
     
       <script src="../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../search/main.js"></script>
       
     
     <!-- 看板娘 -->
     <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
-    <script src="assets/javascripts/autoload2.js"></script>
+    <script src="https://hi-andy.com/assets/javascripts/autoload2.js"></script>
     <canvas id="live2dcanvas" width="200" height="440" style="position: fixed; opacity: 0.9; left: 10px; bottom: -100px; z-index: 99999; pointer-events: none;"></canvas>
     <!-- 鼠标点击特效 -->
     <script src="https://hi-andy.com/assets/javascripts/JSClickBubble.user.js"></script>
