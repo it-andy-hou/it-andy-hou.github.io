@@ -729,8 +729,8 @@ layui.use('table', function(){
 
   table.render({
     elem: '#test'
-    ,url:'http://127.0.0.1:8090/files/jav_data.json'
-    // ,url:'https://hi-andy.com/files/jav_data.json'
+    // ,url:'http://127.0.0.1:8090/files/jav_data.json'
+    ,url:'https://hi-andy.com/files/jav_data.json'
     ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
     ,defaultToolbar: ['filter', 'exports', 'print']
     ,title: '用户数据表'
@@ -741,10 +741,10 @@ layui.use('table', function(){
       // }}
       ,{field:'id', width:100, title: '番号', sort: true}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:150, title: '名称'}
-      ,{field:'score', width:125, title: '评分', sort: true}
-      ,{field:'date', width:120, title: '发行日期', sort: true}
-      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:80 ,}
+      ,{field:'jav', width:210, title: '名称'}
+      ,{field:'score', width:80, title: '评分', sort: true}
+      ,{field:'date', width:110, title: '发行日期', sort: true}
+      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:75,}
     ]]
   });
 
