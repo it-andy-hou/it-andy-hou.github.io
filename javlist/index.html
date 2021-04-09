@@ -33,7 +33,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
     
     
       
@@ -710,8 +710,8 @@
 <script type="text/html" id="toolbarDemo">
   <div class="layui-btn-container">
     <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+    <!-- <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button> -->
+    <!-- <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button> -->
   </div>
 </script>
 
@@ -720,7 +720,6 @@
 </script>
 
 <script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
-
 <!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
 
 <script>
@@ -736,15 +735,14 @@ layui.use('table', function(){
     ,title: '用户数据表'
     ,cols: [[
       {type: 'checkbox', fixed: 'left'}
-      // ,{field:'email', title:'邮箱', width:150, templet: function(res){
-      //   return '<em>'+ res.pic +'</em>'
-      // }}
-      ,{field:'id', width:100, title: '番号', sort: true}
+      ,{field:'id', width:100, title: '番号', sort: true, fixed: 'left'}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:210, title: '名称'}
-      ,{field:'score', width:80, title: '评分', sort: true}
+      ,{field:'jav', width:220, title: '名称'}
       ,{field:'date', width:110, title: '发行日期', sort: true}
-      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:75,}
+      ,{field:'time', width:110, title: '观影日期', sort: true,hide:true}
+      ,{field:'producers', width:110, title: '发行商', sort: true,hide:true}
+      ,{fixed: 'right',field:'score', width:75, title: '评分', sort: true}
+      ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:70,}
     ]]
   });
 
@@ -860,7 +858,7 @@ layui.use('table', function(){
     
       <script src="../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
         <script src="../search/main.js"></script>
       
