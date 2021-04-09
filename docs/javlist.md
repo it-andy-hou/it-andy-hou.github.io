@@ -33,10 +33,10 @@ layui.use('table', function(){
       {type: 'checkbox', fixed: 'left'}
       ,{field:'id', width:100, title: '番号', sort: true, fixed: 'left'}
       ,{field:'name', width:125, title: '演员', sort: true}
-      ,{field:'jav', width:220, title: '名称'}
+      ,{field:'jav', width:190, title: '名称'}
       ,{field:'date', width:110, title: '发行日期', sort: true}
       ,{field:'time', width:110, title: '观影日期', sort: true,hide:true}
-      ,{field:'producers', width:110, title: '发行商', sort: true,hide:true}
+      ,{field:'producers', width:100, title: '发行商', sort: true}
       ,{fixed: 'right',field:'score', width:75, title: '评分', sort: true}
       ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:70,}
     ]]
