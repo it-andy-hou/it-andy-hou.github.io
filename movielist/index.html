@@ -37,7 +37,7 @@
     
     
       
-        <title>Photo - 安迪小站</title>
+        <title>🎬 电影收藏打分 - 安迪小站</title>
       
     
     
@@ -131,7 +131,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Photo
+                🎬 电影收藏打分
               
             </span>
           
@@ -177,14 +177,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." class="md-tabs__link md-tabs__link--active">
+      <a href=".." class="md-tabs__link">
         主页
       </a>
     
@@ -248,7 +250,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../movielist/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           收藏
         </a>
       
@@ -502,10 +504,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       收藏
@@ -521,11 +525,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../movielist/" title="🎬 电影收藏打分" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="🎬 电影收藏打分" class="md-nav__link md-nav__link--active">
       🎬 电影收藏打分
     </a>
+    
   </li>
 
         
@@ -703,9 +714,34 @@
               
                 
                 
-                  <h1>Photo</h1>
+                  <h1>🎬 电影收藏打分</h1>
                 
-                
+                <p><link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css"  media="all"></p>
+<table class="layui-hide" id="test" style="layui-btn background-color: #333;" lay-filter="test"></table>
+
+<table class="layui-table" lay-data="{height:305, url:'https://hi-andy.com/files/movie_data.json', id:'test2', skin: 'row', even: true}">
+  <thead>
+    <tr>
+      <th lay-data="{field:'movie', width:200, templet: '#usernameTpl'}">电影名称</th>
+      <th lay-data="{field:'score', width:80, sort: true}">评分</th>
+      <th lay-data="{field:'time', width:105, sort: true}">观影日期</th>
+      <th lay-data="{field:'review', width:435, height:150, style:'background-color: #eee; color: #000000;'}">短评</th>
+    </tr>
+  </thead>
+</table>
+
+<script type="text/html" id="usernameTpl">
+  <a href="{{d.douban}}" class="layui-table-link" target="_blank">{{ d.movie }}</a>
+</script>
+
+<script src="https://www.layuicdn.com/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述 JS 路径需要改成你本地的 -->
+
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+});
+</script>
                 
                   
                 
@@ -722,6 +758,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../game/" title="🎮 Game" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                🎮 Game
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../javlist/" title="🔞 JAV收藏打分" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                🔞 JAV收藏打分
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
