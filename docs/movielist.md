@@ -2,7 +2,7 @@
  
 <table class="layui-hide" id="test" style="layui-btn background-color: #333;" lay-filter="test"></table>
  
-<table class="layui-table" lay-data="{height:305, url:'http://127.0.0.1:8090/files/movie_data.json', id:'test2', skin: 'row', even: true}">
+<table class="layui-table" lay-data="{height:305, url:'https://hi-andy.com/files/movie_data.json', id:'test2', skin: 'row', even: true}">
   <thead>
     <tr>
       <th lay-data="{field:'movie', width:200, templet: '#usernameTpl'}">电影名称</th>
