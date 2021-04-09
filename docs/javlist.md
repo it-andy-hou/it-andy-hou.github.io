@@ -35,6 +35,8 @@ layui.use('table', function(){
       ,{field:'name', width:125, title: '演员', sort: true}
       ,{field:'jav', width:220, title: '名称'}
       ,{field:'date', width:110, title: '发行日期', sort: true}
+      ,{field:'time', width:110, title: '观影日期', sort: true,hide:true}
+      ,{field:'producers', width:110, title: '发行商', sort: true,hide:true}
       ,{fixed: 'right',field:'score', width:75, title: '评分', sort: true}
       ,{fixed: 'right', title:'封面', toolbar: '#barDemo', width:70,}
     ]]
