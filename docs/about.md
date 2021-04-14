@@ -1,11 +1,20 @@
-<progress value="0.28">28.5%</progress>
+<div style="width:200px; height:auto; "><img src="\imgs\about\body.png">
+
+</div>
+
+
+<!-- <progress value="0.28">28.5%</progress> -->
+<hr>
 
 ### 24 🐵
 90后 | 魔都 | 瘦宅 | 不折腾会死星人 | 恶搞青年 | 完美主义者 | 奋斗小青年|
 
 博客是我整理思路、储存资料、分享心得，以及胡扯乱掰、吐槽叽歪、输出个人价值观的地方。
 
-<font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">(不得不时间过得真快，上面这段话是我二十几岁小伙时写的，现在也已经是个大叔了。😭 28.5 )</font>
+<font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">(不得不时间过得真快，上面这段话是我二十几岁小伙时写的，现在也已经是个大叔了。😭 29 )</font>
 
-### 28.5 💩
 
+### 29 💩
+饱受社会毒打 | 肥宅进行时 | 折腾不动老年人 | LSP |
+
+博客是我吐槽生活、回忆过去、可能暴露XP的地方。
