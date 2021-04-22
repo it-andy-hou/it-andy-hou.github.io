@@ -23,8 +23,6 @@ theme:
 # Page tree
 nav:
   - 主页: index.md
-  - 博文:
-    - 索引: post.md
   - 旅行:
     - ✈️ travel: travel.md
   - 笔记:
