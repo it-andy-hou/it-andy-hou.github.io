@@ -13,7 +13,7 @@
 
 
 ## 🕐出行前一天
-
+<br>
 <input type="checkbox" /> 👗 👔衣物<br>
 　<input type="checkbox" /> 👟👣鞋子、袜子<br>
 　<input type="checkbox" /> 👙 内衣、内裤、睡衣<br>
@@ -39,7 +39,7 @@
 　<input type="checkbox" /> ✂️ 指甲刀<br>
 
 ## ❗️❗️出行前一刻
-
+<br>
 <input type="checkbox" /> 💧🔌💡关好门窗、灯、水 （双方复核）<br>
 <input type="checkbox" /> 💻 是否开启电脑（远程跳板办公）<br>
 <input type="checkbox" /> 🚮倒垃圾<br>
