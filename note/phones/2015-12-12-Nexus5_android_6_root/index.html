@@ -35,7 +35,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
     
     
       
@@ -714,9 +714,9 @@
                 
                 <h1 id="google-nexus5-android-601-root">Google Nexus5 android 6.0.1 &amp; root</h1>
 <p>因为安迪的手机是Nexus 5，所以也写总结，手机用了有3年了，写一些平时需要用的东西供大家参考。</p>
-<p>&nbsp;
+<p>&nbsp;</p>
 <h3>系统下载</h3>
-谷歌官方镜像下载 ：<a href="https://developers.google.com/android/nexus/images#volantislrx21l">https://developers.google.com/android/nexus/images#volantislrx21l</a>
+<p>谷歌官方镜像下载 ：<a href="https://developers.google.com/android/nexus/images#volantislrx21l">https://developers.google.com/android/nexus/images#volantislrx21l</a></p>
 <h4 id="hammerhead">"hammerhead" for Nexus 5 (GSM/LTE)</h4>
 <table class="table table-bordered table-striped table-condensed">
 <tbody>
@@ -812,9 +812,9 @@
 </tr>
 </tbody>
 </table>
-百度网盘：<a href="http://pan.baidu.com/s/1jGVqI0m">http://pan.baidu.com/s/1jGVqI0m</a>
+<p>百度网盘：<a href="http://pan.baidu.com/s/1jGVqI0m">http://pan.baidu.com/s/1jGVqI0m</a></p>
 <h3>刷机教程</h3>
-1.adb和fastboot驱动</p>
+<p>1.adb和fastboot驱动</p>
 <p>百度网盘：<a href="http://pan.baidu.com/s/1i422M2p">http://pan.baidu.com/s/1i422M2p</a></p>
 <p>将里面名称中含有adb和fastboot.exe都复制到 c:/windows/system32下</p>
 <p>然后再将名称中含有adb的所有文件复制到 c:/windows/system</p>
@@ -832,15 +832,14 @@ fastboot reboot-bootloader
 fastboot flash recovery recovery.img
 fastboot flash boot boot.img
 fastboot flash system system.img</pre>
-
 <p><span style="color: #993300;">fastboot flash bootloader “已最新包解压的bootloader包名为准”</span></p>
 <p><span style="color: #993300;">fastboot flash radio  “已最新包解压的radio包名为准”</span></p>
-<p>如果您想清除数据的话，就再刷入
+<p>如果您想清除数据的话，就再刷入</p>
 <pre class="lang:sh decode:true">fastboot flash cache cache.img
 fastboot flash userdata userdata.img</pre>
-然后大功告成！
+<p>然后大功告成！</p>
 <h3>解锁教程</h3>
-这里再重申一下关于手机解锁的说明：
+<p>这里再重申一下关于手机解锁的说明：
 好处：如果你的手机解锁了，可以刷第三方的recovery的，可以刷论坛上提供的各种rom刷机包，刷自己喜欢的刷机包。另外也只有先解锁才能Root。
 坏处：如果你的手机解锁了，要是有问题，是不可以保修的，如果要保修的话，自己还得刷回官方的版本，然后恢复到锁定状态。</p>
 <p>1.adb和fastboot驱动</p>
@@ -851,18 +850,18 @@ fastboot flash userdata userdata.img</pre>
 <p>3.进入开发者选项，勾选USB调试的复选框，确定选择“一律允许此计算机进行调试”</p>
 <p><img alt="" src="../../../imgs/note/phone/7afc57f8jw1eyw5anhqumj208206ujsc.jpg" /></p>
 <p>4.连接你的手机到电脑。</p>
-<p>5.一旦你已经给你的电脑调试访问,这是时间的命令。输入一个命令提示符(开始菜单→运行→cmd)
+<p>5.一旦你已经给你的电脑调试访问,这是时间的命令。输入一个命令提示符(开始菜单→运行→cmd)</p>
 <pre class="lang:sh decode:true ">adb reboot bootloader</pre>
-<img class="alignnone" src="http://ww1.sinaimg.cn/mw690/7afc57f8jw1eyw5do8zf4j20fa09un2n.jpg" alt="" width="550" height="354" /></p>
+<p><img class="alignnone" src="http://ww1.sinaimg.cn/mw690/7afc57f8jw1eyw5do8zf4j20fa09un2n.jpg" alt="" width="550" height="354" /></p>
 <p>6.等待bootloader界面在屏幕上出现。fastboot oem unlock</p>
 <p>7.一个unlock bootloader的选择确认页面会出现。用音量来选择到“YES,”，用电源键来确定。</p>
 <p><img alt="" src="../../../imgs/note/phone/7afc57f8jw1eyw5dnkn33j20ep09vafm.jpg" /></p>
 <p>8.这时你手机上的所有数据都将被抹去,LOCK STATE将变成unlocked。不应该超过一两分钟。</p>
 <p><img alt="" src="../../../imgs/note/phone/7afc57f8jw1eyw5dmkxwej20g908r453.jpg" /></p>
 <p>9.好了就此你的bootloader（引导装载程序）现在已经解锁,你应该看到屏幕上显示“START“用电源键选择并让手机重启。</p>
-<p>在重新启动后,你的手机将完成出厂设置.
+<p>在重新启动后,你的手机将完成出厂设置.</p>
 <h3>Root教程</h3>
-<strong>5.0ROOT</strong></p>
+<p><strong>5.0ROOT</strong></p>
 <p>步骤：
 1.将您的nexus 5调整到bootloader模式，具体的办法是先关机，然后在关机的状态下，同时按住电源和音量上和音量下键。
 2.通过USB将nexus 5和电脑相连接。
@@ -882,9 +881,9 @@ fastboot flash userdata userdata.img</pre>
 <p>&nbsp;</p>
 <p><strong>5.1 5.1.1 ROOT</strong></p>
 <p>先解锁，然后安装第三方recovery twrp，通过其install功能来刷入supersu.zip来实现root！</p>
-<p>刷入twrp方法： 参加刷机教程
+<p>刷入twrp方法： 参加刷机教程</p>
 <pre class="lang:sh decode:true">fastboot flash recovery recovery.img</pre>
-只不过将<span style="color: #993300;"> recovery.img 名字换成 <span style="color: #993300;">openrecovery-twrp-2.8.5.2-hammerhead.img</span></span></p>
+<p>只不过将<span style="color: #993300;"> recovery.img 名字换成 <span style="color: #993300;">openrecovery-twrp-2.8.5.2-hammerhead.img</span></span></p>
 <p>将手机进入fastboot模式，电脑端输入fastboot flash recovery twrp的文件名.img 来实现安装twrp</p>
 <p>然后进入recovery模式，利用twrp的install来选择SDcard安装 supersu.zip，然后刷入重启即可安卓5.1.1的root。</p>
 <p>百度网盘：<a href="http://pan.baidu.com/s/1kUqTztd">http://pan.baidu.com/s/1kUqTztd</a></p>
@@ -893,11 +892,11 @@ fastboot flash userdata userdata.img</pre>
 <p>目前大神Chainfire提供了临时的nexus 5设备安卓6.0的修改版内核，通过刷入对应设备的boot.img后，再刷入twrp等第三方的recovery，通过twrp的install来刷入supersu 2.50 beta版的zip来实现root.</p>
 <p>刷入twrp方法： 参加刷机教程</p>
 <p>将手机进入bootloader模式，然后电脑端在命令提示符里输入相应的dos命令进入twrp包所在目录，然后输入fastboot flash recovery twrp的文件名.img 来实现安装twrp</p>
-<p>刷入了twrp等第三方的recovery：<a class=" external" href="http://link.zhihu.com/?target=http%3A//teamw.in/project/twrp2/" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">teamw.in/project/twrp2/</span></a>
+<p>刷入了twrp等第三方的recovery：<a class=" external" href="http://link.zhihu.com/?target=http%3A//teamw.in/project/twrp2/" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">teamw.in/project/twrp2/</span></a></p>
 <pre class="lang:sh decode:true">fastboot flash recovery recovery.img</pre>
-nexus 5：<a class=" wrap external" href="http://link.zhihu.com/?target=http%3A//forum.xda-developers.com/attachment.php%3Fattachmentid%3D3499079%26d%3D1444242551" target="_blank" rel="nofollow noreferrer">hammerhead-mra58k-boot.zip</a>
+<p>nexus 5：<a class=" wrap external" href="http://link.zhihu.com/?target=http%3A//forum.xda-developers.com/attachment.php%3Fattachmentid%3D3499079%26d%3D1444242551" target="_blank" rel="nofollow noreferrer">hammerhead-mra58k-boot.zip</a></p>
 <pre class="lang:sh decode:true">fastboot flash boot boot.img</pre>
-supersu 2.50 beta版下载地址：<a class=" external" href="http://link.zhihu.com/?target=https%3A//download.chainfire.eu/741/SuperSU/BETA-SuperSU-v2.50.zip%3Fretrieve_file%3D1" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">download.chainfire.eu/7</span><span class="invisible">41/SuperSU/BETA-SuperSU-v2.50.zip?retrieve_file=1</span></a></p>
+<p>supersu 2.50 beta版下载地址：<a class=" external" href="http://link.zhihu.com/?target=https%3A//download.chainfire.eu/741/SuperSU/BETA-SuperSU-v2.50.zip%3Fretrieve_file%3D1" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">download.chainfire.eu/7</span><span class="invisible">41/SuperSU/BETA-SuperSU-v2.50.zip?retrieve_file=1</span></a></p>
 <p>然后进入recovery模式，利用twrp的install来选择SDcard安装BETA-SuperSU-v2.50.zip，然后刷入重启即可完成安卓<strong>6.0 </strong>的root。</p>
 <p>百度网盘：<a href="http://pan.baidu.com/s/1bs7EUy">http://pan.baidu.com/s/1bs7EUy</a></p>
 <p>&nbsp;</p>
@@ -944,7 +943,7 @@ supersu 2.50 beta版下载地址：<a class=" external" href="http://link.zhihu.
     
       <script src="../../../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
       
         <script src="../../../search/main.js"></script>
       

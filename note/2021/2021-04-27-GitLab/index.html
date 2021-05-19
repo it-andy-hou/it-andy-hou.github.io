@@ -33,7 +33,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
     
     
       
@@ -748,24 +748,20 @@
 </ul>
 <h2 id="_1">页面抓取</h2>
 <p>老版本的GitLab非常好操作，因为主页自带一个 “Show all” 的功能，点开后直接页面F12，拷贝div 内容，然后编辑器过滤以下，然后批量编辑以下即可</p>
-<pre><code class="html">&lt;div class=&quot;panel panel-default&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;panel panel-default&quot;&gt;...&lt;/div&gt;
 </code></pre>
-
 <h2 id="_2">接口抓取</h2>
 <p>新版本的GitLab页面整体都改过了，找了半天只有分页一页只显示20个，而且没有设置的地方，网站找了半天找到了GitLab的接口文档</p>
 <p><a href="https://docs.gitlab.com/ee/api/README.html#pagination-link-header">https://docs.gitlab.com/ee/api/README.html#pagination-link-header</a></p>
 <p>根据官方说明还需要用户名密码TOKEN 之类的 curl 来请求，我数了下我们项目没有几百个，就决定手动搞定，有这时间写程序，不如复制粘贴解决了，结果官方的接口居然只能一次请求100个，然后也要通过分页来请求，然后看了下我们有五百多，还好还好，5个链接。手动操作了。</p>
-<pre><code class="html">http://服务器地址/api/v4/groups/组名/projects?per_page=100&amp;page=1
+<pre><code class="language-html">http://服务器地址/api/v4/groups/组名/projects?per_page=100&amp;page=1
 </code></pre>
-
 <p>然后接口数据标准json格式，然后编辑器格式化，过滤了一波解决。</p>
 <h2 id="_3">克隆</h2>
 <p>顺带说下批量克隆的一个小技巧，至克隆最新的，这样节省空间。</p>
-<pre><code class="bash">git clone http://服务器地址/XXX/XXX.git  --depth 1
+<pre><code class="language-bash">git clone http://服务器地址/XXX/XXX.git  --depth 1
 </code></pre>
-
 <!-- 来必力City版安装代码 -->
-
 <div id="lv-container" data-id="city" data-uid="MTAyMC80NzA4OC8yMzU4OA==">
     <script type="text/javascript">
    (function(d, s) {
@@ -782,7 +778,6 @@
     </script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
-
 <!-- City版安装代码已完成 -->
                 
                   
@@ -821,7 +816,7 @@
     
       <script src="../../../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
       
         <script src="../../../search/main.js"></script>
       
