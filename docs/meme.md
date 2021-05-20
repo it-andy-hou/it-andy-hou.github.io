@@ -1,5 +1,11 @@
 <div style="max-width: 100%; margin: 0px auto; padding-top: 10px; display: flex; flex-wrap: wrap;">
     <div style="margin: 0px 10px 10px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
+        <img src="/imgs/meme/Y}U8YF7A5UE[}H}[OXF4PYV.jpg" width="150" height="150">
+    </div>
+    <div style="margin: 0px 10px 10px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
+        <img src="/imgs/meme/3ba040fe9e81ff7c1f430aee53e3440.jpg" width="150" height="150">
+    </div>
+    <div style="margin: 0px 10px 10px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
         <img src="/imgs/meme/yIP2aBAOdxvwuTf.gif" width="250" height="150">
     </div>
     <div style="margin: 0px 10px 10px;box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;">
