@@ -24,26 +24,26 @@ theme:
 nav:
   - 主页: index.md
 
-  - 摄影:
+  - 📷摄影:
     - 摄影: https://hi-andyhou.tuchong.com/
-  - 笔记:
+  - 📑笔记:
     - 📑 笔记导航: note.md
     - 📱 手机相关: note/phones/
     - 🎮 Switch: note/switch/
-  - 游戏:
+  - 🎮游戏:
     - 🎮 Game: game.md
-  - 收藏: 
+  - 💖收藏: 
     - 🎬 电影收藏打分: movielist.md
     - 🔞 JAV收藏打分: javlist.md
     - 💖 美食收藏: favlist.md
-  - 工具: 
+  - 🔨工具: 
     - 🔨 工具导航: tools.md
-  - 旅行:
+  - ✈️旅行:
     - ✈️ travel: travel.md
-  - 表情包: 
+  - 💩表情包: 
     - 💩 沙雕/装逼: meme.md
     - 📑 模板: meme/meme_template.md
-  - 关于: 
+  - 🐵关于: 
     - 🐵 关于: about.md
 
 google_analytics: ['UA-66508870-1', 'hi-andy.com']
