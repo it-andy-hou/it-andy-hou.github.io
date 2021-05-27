@@ -1,4 +1,7 @@
 <hr>
+> <div style="position:relative;"><a href="/note/2021/2021-05-26-Efficiency_tools/"><img src="/imgs/banner/2021-05-26-Efficiency_tools.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🚀 效率和工具</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🚀  效率和工具</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-05-26</font>](note/2021/2021-05-26-Efficiency_tools.md)
+
+<hr>
 > <div style="position:relative;"><a href="/note/2021/2021-04-27-GitLab/"><img src="/imgs/banner/2021-04-27-GitLab.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📑 GitLab 项目名全批量抓取</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📑  GitLab 项目名全批量抓取</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-27</font>](note/2021/2021-04-27-GitLab.md)
 
 <hr>
