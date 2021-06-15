@@ -1,5 +1,7 @@
 # 批处理 + Server端 文件传输工具
 
+工具打包下载  [上传远程服务器工具 V1.0](../files/apk_upload_tools.zip)
+
 ## 后端实现原理
 apache cgi 功能实现，具体还是不阐述了。
 
