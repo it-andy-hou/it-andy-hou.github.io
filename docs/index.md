@@ -5,7 +5,7 @@
 
 
 <hr>
-> <div style="position:relative;"><a href="/post/2021/2021-04-28-pingpong/"><img src="/imgs/banner/2021-04-28-pingpong.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　⚪️ 不是六边形战士</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　⚪️  不是六边形战士</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-28</font>](post/2021/2021-04-28-pingpong.md)
+> <div style="position:relative;"><a href="/post/2021/2021-04-28-pingpong/"><img src="/imgs/banner/2021-04-28-pingpong.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　⚪️ 不是六边形战士</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　⚪️  不是六边形战士</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-28 / 2021-08-04 update </font>](post/2021/2021-04-28-pingpong.md)
 
 
 <hr>
