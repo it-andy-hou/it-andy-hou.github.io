@@ -18,7 +18,7 @@
 
 📺 [https://space.bilibili.com/873529](https://space.bilibili.com/873529)
 
- <object data="//widget.weibo.com/weiboshow/index.php?language=&width=0&height=300&fansRow=2&ptype=0&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=2063357944&verifier=a81cad33&colors=d6f3f7,ffffff,000000,90CAF9,ecfbfd&dpc=1" width="600px" height="300px" type="text/html">
+ <object data="//widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=2&ptype=0&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=2063357944&verifier=a81cad33&colors=d6f3f7,ffffff,000000,90CAF9,ecfbfd&dpc=1" width="600px" height="600px" type="text/html">
     Embedded data failed to be displayed.
 </object>
 
