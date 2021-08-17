@@ -19,7 +19,7 @@
 
 
 <hr>
-> <div style="position:relative;"><a href="/post/2021/2021-04-22-essays/"><img src="/imgs/banner/2020-05-25-essays.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　❓ 为什么要写博客</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　❓ 为什么要写博客</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-22</font>](post/2021/2021-04-22-essays.md)
+> <div style="position:relative;"><a href="/post/2021/2021-04-22-essays/"><img src="/imgs/banner/2020-05-25-essays.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　❓ 为什么要个人网站？</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　❓ 为什么要个人网站？</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-22</font>](post/2021/2021-04-22-essays.md)
 
 <hr>
 > <div style="position:relative;"><a href="/post/2021/2021-04-09-mlog/"><img src="/imgs/banner/2021-04-09-mlog.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎤 我为什么会变成一个大叔啊</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎤 我为什么会变成一个大叔啊</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-04-09</font>](post/2021/2021-04-09-mlog.md)
