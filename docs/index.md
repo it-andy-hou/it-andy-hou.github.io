@@ -1,5 +1,8 @@
 
 <hr>
+> <div style="position:relative;"><a href="/note/2021/2021-08-31_Reading_notes/"><img src="/imgs/banner/2021-08-31_Reading_notes.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　📝 《数字时代的效率手册》 </font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　📝  《数字时代的效率手册》读书笔记 </font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-08-31</font>](note/2021/2021-08-31_Reading_notes.md)
+
+<hr>
 > <div style="position:relative;"><a href="/note/2021/2021-08-17-music/"><img src="/imgs/banner/2021-08-17-music.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎼 我的听歌方案分享</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎼  我的听歌方案分享</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-08-17</font>](note/2021/2021-08-17-music.md)
 
 
