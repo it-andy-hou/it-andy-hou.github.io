@@ -33,7 +33,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -757,7 +757,7 @@
 　文件上传/下载日志存在：D:/ftp.log </p>
 </blockquote>
 <h2 id="_1">上传功能</h2>
-<pre><code class="language-bash">@echo off
+<pre><code class="bash">@echo off
 REM # Title:         ftp文件上传工具
 REM # Description:   拖动文件上传
 REM # Author:        andyhou  &lt;andy@hi-andy.com&gt;
@@ -780,10 +780,11 @@ ftp -n -s:ftpcmd.dat %server%
 del ftpcmd.dat
 echo %date:~0,4%-%date:~5,2%-%date:~8,2% %time% 上传&quot;%file%&quot;到ftp服务器 %server% &gt;&gt; %logs%
 </code></pre>
+
 <h2 id="_2">上传功能的升级，加入右键菜单</h2>
-<p><img alt="2021-01-08_155827" src="\imgs\tools\2021-01-08_155827.png" /></p>
+<p><img alt="2021-01-08_155827" src="../../imgs/tools/2021-01-08_155827.png" /></p>
 <p>用注册表将批处理上传功能注册！保存为"ftp上传脚本注册右键显示.reg"</p>
-<pre><code class="language-Reg">Windows Registry Editor Version 5.00
+<pre><code class="Reg">Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\GJZQ_Upload_FTP]
 @=&quot;上传文件到Gjzqftp&quot;
@@ -791,15 +792,17 @@ echo %date:~0,4%-%date:~5,2%-%date:~8,2% %time% 上传&quot;%file%&quot;到ftp�
 [HKEY_CLASSES_ROOT\*\shell\GJZQ_Upload_FTP\command]
 @=&quot;\&quot;C:\\Windows\\gjzqftp_upload.bat\&quot; \&quot;%1\&quot;&quot;
 </code></pre>
+
 <p>一键安装拷贝注册脚本</p>
-<pre><code class="language-bash">@echo off
+<pre><code class="bash">@echo off
 copy %~dp0\gjzqftp_upload.bat C:\Windows\
 regedit /s %~dp0\ftp上传脚本注册右键显示.reg
 
 pause
 </code></pre>
+
 <h2 id="_3">下载功能</h2>
-<pre><code class="language-BAT">@echo off
+<pre><code class="BAT">@echo off
 REM # Title:         ftp文件下载工具
 REM # Description:   执行下载最新文件
 REM # Author:        andyhou  &lt;andy@hi-andy.com&gt;
@@ -849,9 +852,11 @@ del ftpcmd.dat
 del ftplist.dat
 echo %date:~0,4%-%date:~5,2%-%date:~8,2% %time% 从ftp服务器 %ftp_ip%下载&quot;%dowload_file%&quot; &gt;&gt; %logs%
 </code></pre>
+
 <hr>
 
 <!-- 来必力City版安装代码 -->
+
 <div id="lv-container" data-id="city" data-uid="MTAyMC80NzA4OC8yMzU4OA==">
     <script type="text/javascript">
    (function(d, s) {
@@ -868,6 +873,7 @@ echo %date:~0,4%-%date:~5,2%-%date:~8,2% %time% 从ftp服务器 %ftp_ip%下载&q
     </script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
+
 <!-- City版安装代码已完成 -->
                 
                   
@@ -909,7 +915,7 @@ echo %date:~0,4%-%date:~5,2%-%date:~8,2% %time% 从ftp服务器 %ftp_ip%下载&q
     
       <script src="../../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       
