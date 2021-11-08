@@ -4,5 +4,6 @@
 #### 插件
 - [Authenticator(身份验证器)](tools/Chrome_Plugins_Authenticator.md)
 #### 其他
-- [Material Design 色卡](tools/colors.md)<br>
+- [Windows 任务栏上小猫跑步](https://github.com/Kyome22/RunCat_for_windows)
+- [Material Design 色卡](tools/colors.md)
 - [emoji](tools/emoji.md)
