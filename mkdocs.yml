@@ -30,6 +30,10 @@ nav:
     - 📑 笔记导航: note.md
     - 📱 手机相关: note/phones/
     - 🎮 Switch: note/switch/
+  - 📚教程:
+    - HostMonitor: 
+      - 前情说明: HostMonitor/000-HostMonitor.md
+      - 介绍: HostMonitor/001-introduce.md
   - 🎮游戏:
     - 🎮 Game: game.md
   - 💖收藏: 
