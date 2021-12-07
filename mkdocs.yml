@@ -34,6 +34,8 @@ nav:
     - HostMonitor: 
       - 前情说明: HostMonitor/000-HostMonitor.md
       - 介绍: HostMonitor/001-introduce.md
+    - BashScripting: 
+      - 插件: BashScripting/000-snippet_extension.md
   - 🎮游戏:
     - 🎮 Game: game.md
   - 💖收藏: 
