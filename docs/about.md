@@ -9,9 +9,9 @@
 
 
 ### 🏡 生活中的我
-西安人，定居上海，瘦宅。
+西安人，定居 <img height="35" src="https://img.icons8.com/ios/50/000000/shanghai-pearl-tower.png"/> 上海，🐵瘦宅。
 
-喜好：数码产品、效率工具、博客、摄影、电影
+喜好：💻数码、🔨效率、📋博客、📷摄影、🎬电影、🎮游戏、🏓️乒乓
 
 ### 🍺 联系到我
 ✉️ andy@hi-andy.com

@@ -1,4 +1,8 @@
 <hr>
+> <div style="position:relative;"><a href="/note/2021/2021-12-29-cloud_tencent/"><img src="/imgs/banner/2021-12-29-cloud_tencent.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🏄 腾讯云堡垒机快捷登录</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🏄  腾讯云,堡垒机,xshell,双因素,自动登录</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-12-29</font>](2021-12-29-cloud_tencent.md)
+
+
+<hr>
 > <div style="position:relative;"><a href="/note/2021/2021-05-26-Efficiency_tools/"><img src="/imgs/banner/2021-05-26-Efficiency_tools.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🚀 效率和工具</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🚀  效率和工具</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-05-26</font>](note/2021/2021-05-26-Efficiency_tools.md)
 
 <hr>
