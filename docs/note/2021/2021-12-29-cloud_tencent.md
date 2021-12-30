@@ -2,6 +2,7 @@
 
 ## 效果
 <iframe width="900" height="600" src="//player.bilibili.com/player.html?aid=550208735&bvid=BV1Ui4y1R7ep&cid=471526416&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+**xshell 弹窗 密码输入框没有录进去，请忽略。**
 
 依赖项目:
 GitHub:[https://github.com/ms2008/Xshell-OTP](https://github.com/ms2008/Xshell-OTP)
