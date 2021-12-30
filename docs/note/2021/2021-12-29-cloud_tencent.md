@@ -25,6 +25,8 @@ GitHub:[https://github.com/ms2008/Xshell-OTP](https://github.com/ms2008/Xshell-O
 
 导出后会下载到 **authenticator.txt** 文本，打开后就能看到 secret= 后面的数值，复制出来
 
+<img src="/imgs/note/2021/2021-12-30_135325.png">
+
 使用 **Xshell-OTP** 项目提供的 **jumper.js** ，修改代码
 
 ```javascript
@@ -44,7 +46,7 @@ xsh.Screen.Send("cmd /c echo " +"用户密码"+ otp + "| clip");
 
 以上就完成了腾讯云堡垒机的自动登录操作步骤，至于内部菜单，可以通过自己编写vbs来直接跳转到对应机器上。
 
-
+进阶小工具 [Google_Authenticator_MFA Windows 计算工具自动粘贴板](https://hi-andy.com/tools/Authenticator_MFA_exe/)
 
 
 <!-- 来必力City版安装代码 -->
