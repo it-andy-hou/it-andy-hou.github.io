@@ -1,5 +1,9 @@
 # 腾讯云堡垒机开启二次（双因素）验证，xshell自动登录脚本
 
+## 效果
+<iframe width="900" height="600" src="//player.bilibili.com/player.html?aid=550208735&bvid=BV1Ui4y1R7ep&cid=471526416&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+依赖项目:
 GitHub:[https://github.com/ms2008/Xshell-OTP](https://github.com/ms2008/Xshell-OTP)
 
 ## 原理
