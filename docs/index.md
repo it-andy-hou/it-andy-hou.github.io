@@ -1,5 +1,5 @@
 <hr>
-> <div style="position:relative;"><a href="/note/2021/2021-12-07-MusicTag/"><img src="/imgs/banner/2021-12-07-MusicTag.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎼 洗歌工具 MusicTag</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎼 补全音频文件的专辑、封面等 CD 信息</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-12-07</font>](2021-12-07-MusicTag.md)
+> <div style="position:relative;"><a href="/note/2021/2021-12-07-MusicTag/"><img src="/imgs/banner/2021-12-07-MusicTag.jpg" width="500" height="100"></a><br><div style="position:absolute; z-index:2; left:10px; top:35px"><font style="font-size: 20px;font-weight: 400;margin: 0;color: #ffffff;">　🎼 洗歌工具 MusicTag</font></div></div>[<font style="font-size: 18px;font-weight: 400;margin: 0;color: #0086e3;">　🎼 补全音频文件的专辑、封面等 CD 信息</font><br><font style="margin: 4px 0 5px 0;color: #a8a8a8;position: relative;">　 2021-12-07</font>](note/2021-12-07-MusicTag.md)
 
 
 <hr>
