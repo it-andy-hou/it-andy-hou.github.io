@@ -35,7 +35,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -923,7 +923,7 @@
 ​ 应用<strong>应用管理 X-APM</strong> 安装完成后就有一个选项可以开启，微信GCM的设置参照 http://www.oneplusbbs.com/thread-4078080-1.html 我也不太想重复别人写的，大家自己看。进阶 &gt; GCM 代收 ，需要强调的是需要将微信加入黑阈 和 X-APM的乖巧模式，要保证微信不要后台驻留，要不然进程存在微信还是会用自己的消息提醒机制。
 ​ 接下来就是要保证稳定的接收到GCM，全网最多的方案就是<strong>后台常开Shadowsocks</strong>，有人说这种方法更傻因为常挂翻墙，那不得更费点，不错从操作逻辑上也算是简单，省电的角度我目前还没有横向对比测试。基本上你开启Shadowsocks就可以找朋友测试 微信的GCM服务来接收消息了。关于调试<strong>BetterBatteryStats</strong>、<strong>PNF Root</strong> 这两个应用是用来调试的，前者是耗电统计的，主要是统计GCM 耗电量问题，<strong>PNF Root</strong> 则是可以修改GCM心跳间隔的，查看GCM连通日志。这里说一个快捷操作<code>*#*#426#*#*</code>同样可以常看GCM的连接情况和日志。以上就是用 <strong>Shadowsocks的方案</strong>。
 ​ Hosts方案，hosts 这个大家应该也不陌生，用hosts 翻墙的方法大家应该也都懂我这里不过多说操作，hosts 的方案就是 将GCM的服务写入hosts这个方案存在时效性，被封了就不能及时收到消息，但是相比较上面的方案更省电因为是直连不用开服务。关于Hosts 文件》<a href="https://github.com/googlehosts/hosts">Google Hosts 项目</a></p>
-<pre><code class="language-ini"># Google:gcm Start
+<pre><code class="ini"># Google:gcm Start
 108.177.97.188 mobile-gtalk.l.google.com
 108.177.97.188 mtalk.google.com
 108.177.97.188 mtalk4.google.com
@@ -935,11 +935,13 @@
 216.58.199.10 gcm-http.googleapis.com
 # Google:gcm End
 </code></pre>
+
 <p>最后的方案其实可以和Hosts 的方案同时使用，其实你不难发现这些方案就是平时FQ的方案。最后的方案就是DNS的解析方案。Override DNS 我是使用这个软件来修改DNS的，当然你也可以通过其他软件，大部分都是需要root权限的。原理其实和上面的一样，通过无污染的DNS来正常解析GCM服务器，这里的DNS服务器我就不列举了。</p>
 <p>关于各种FQ的软件汇总我也曾经写过一个 https://github.com/it-andy-hou/fq 大家可以参考。</p>
 <hr>
 
 <!-- 来必力City版安装代码 -->
+
 <div id="lv-container" data-id="city" data-uid="MTAyMC80NzA4OC8yMzU4OA==">
     <script type="text/javascript">
    (function(d, s) {
@@ -956,6 +958,7 @@
     </script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
+
 <!-- City版安装代码已完成 -->
                 
                   
@@ -997,7 +1000,7 @@
     
       <script src="../../../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../search/main.js"></script>
       
