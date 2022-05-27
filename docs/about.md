@@ -9,7 +9,7 @@
 你好，我是 Andy Hou，我偶尔写写博，更新频率比较佛系，主要是运维相关、工具类、游戏、表情包、Jav观影记录。
 
 ### 🏡 生活中的我
-西安人，定居 <img height="35" src="https://img.icons8.com/ios/50/000000/shanghai-pearl-tower.png"/> 上海，🐵瘦宅。
+西安人，定居 <img height="35" src="https://img.icons8.com/ios/50/000000/shanghai-pearl-tower.png"/> 上海，🐵瘦宅，👶奶爸。
 
 喜好：💻数码、🔨效率、📋博客、📷摄影、🎬电影、🎮游戏、🏓️乒乓
 
