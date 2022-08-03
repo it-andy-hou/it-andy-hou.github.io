@@ -33,7 +33,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
     
     
       
@@ -73,7 +73,7 @@
   }
   ga.l = +new Date
   /* Setup integration and send page view */
-  ga("create", "UA-66508870-1", "hi-andy.com")
+  ga("create", "325688291", "hi-andy.com")
   ga("set", "anonymizeIp", true)
   ga("send", "pageview")
   /* Register handler to log search on blur */
@@ -894,8 +894,8 @@
                 
                 <h1 id="xshell">腾讯云堡垒机开启二次（双因素）验证，xshell自动登录脚本</h1>
 <h2 id="_1">效果</h2>
-<p><iframe width="900" height="600" src="//player.bilibili.com/player.html?aid=550208735&bvid=BV1Ui4y1R7ep&cid=471526416&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-<strong>xshell 弹窗 密码输入框没有录进去，请忽略。</strong></p>
+<iframe width="900" height="600" src="//player.bilibili.com/player.html?aid=550208735&bvid=BV1Ui4y1R7ep&cid=471526416&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p><strong>xshell 弹窗 密码输入框没有录进去，请忽略。</strong></p>
 <p>依赖项目:
 GitHub:<a href="https://github.com/ms2008/Xshell-OTP">https://github.com/ms2008/Xshell-OTP</a></p>
 <h2 id="_2">原理</h2>
@@ -912,22 +912,18 @@ GitHub:<a href="https://github.com/ms2008/Xshell-OTP">https://github.com/ms2008/
 <p>导出后会下载到 <strong>authenticator.txt</strong> 文本，打开后就能看到 secret= 后面的数值，复制出来</p>
 <p><img src="/imgs/note/2021/2021-12-30_135325.png"></p>
 <p>使用 <strong>Xshell-OTP</strong> 项目提供的 <strong>jumper.js</strong> ，修改代码</p>
-<pre><code class="javascript">2326行   var otp = totpObj.getOTP(&quot;这里填写提取到 MFA验证的secret值&quot;);
+<pre><code class="language-javascript">2326行   var otp = totpObj.getOTP(&quot;这里填写提取到 MFA验证的secret值&quot;);
 </code></pre>
-
-<pre><code class="javascript">// 这行是调用cmd将密码复制进粘贴板里，方便粘贴到xhsell 弹窗里
+<pre><code class="language-javascript">// 这行是调用cmd将密码复制进粘贴板里，方便粘贴到xhsell 弹窗里
 xsh.Screen.Send(&quot;cmd /c echo &quot; + otp + &quot;| clip&quot;);
 </code></pre>
-
 <p>适配腾讯云堡垒机，腾讯堡垒机是用户密码+OTP的形式。</p>
-<pre><code class="javascript">//适配腾讯云堡垒机
+<pre><code class="language-javascript">//适配腾讯云堡垒机
 xsh.Screen.Send(&quot;cmd /c echo &quot; +&quot;用户密码&quot;+ otp + &quot;| clip&quot;);
 </code></pre>
-
 <p>以上就完成了腾讯云堡垒机的自动登录操作步骤，至于内部菜单，可以通过自己编写vbs来直接跳转到对应机器上。</p>
 <p>进阶小工具 <a href="https://hi-andy.com/tools/Authenticator_MFA_exe/">Google_Authenticator_MFA Windows 计算工具自动粘贴板</a></p>
 <!-- 来必力City版安装代码 -->
-
 <div id="lv-container" data-id="city" data-uid="MTAyMC80NzA4OC8yMzU4OA==">
     <script type="text/javascript">
    (function(d, s) {
@@ -944,7 +940,6 @@ xsh.Screen.Send(&quot;cmd /c echo &quot; +&quot;用户密码&quot;+ otp + &quot;
     </script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
-
 <!-- City版安装代码已完成 -->
                 
                   
@@ -996,7 +991,7 @@ xsh.Screen.Send(&quot;cmd /c echo &quot; +&quot;用户密码&quot;+ otp + &quot;
     
       <script src="../../../assets/javascripts/application.718059d6.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
       
         <script src="../../../search/main.js"></script>
       
