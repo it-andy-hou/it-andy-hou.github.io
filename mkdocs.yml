@@ -1,57 +1,139 @@
 site_name: 安迪小站
-dev_addr: '127.0.0.1:8090'
-
-# Configuration
+site_url: https://hi-andy.com
 theme:
-  name: null
-  custom_dir: material
-
-  # Default values, taken from mkdocs_theme.yml
-  language: en
-  feature:
-    tabs: true
+  name: material
+  logo: assets/logo.jpg
+  favicon: assets/logo.jpg
+  features:
+    - search.highlight
+    - navigation.tabs
+    - navigation.indexes
+    - content.tabs.link
+    - navigation.sections
+    # - navigation.path
+    # - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - navigation.footer
   palette:
-    primary: black
-    accent: black
-  font:
-    text: Roboto
-    code: Roboto Mono
-  favicon: assets/images/favicon.png
-  logo:
-    icon: "\uE80C"
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
 
-# Page tree
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: black 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
 nav:
   - 主页: index.md
+  - 📑博客: 
+      - blog/index.md
+  - 🧠AI: ai.md
+  - 🚀效率: efficiency.md
+  - 📦工具: tools.md
+  - 🐵关于: about.md
 
-  - 📷摄影:
-    - 摄影: https://hi-andyhou.tuchong.com/
-  - 📑笔记:
-    - 📑 笔记导航: note.md
-    - 📱 手机相关: note/phones/
-    - 🎮 Switch: note/switch/
-  - 📚教程:
-    - HostMonitor: 
-      - 前情说明: HostMonitor/000-HostMonitor.md
-      - 介绍: HostMonitor/001-introduce.md
-    - BashScripting: 
-      - 插件: BashScripting/000-snippet_extension.md
-  - 🎮游戏:
-    - 🎮 Game: game.md
-  - 👶育儿:
-    - 安迪的育儿百科: parenting/parenting_wiki.md
-  - 💖收藏: 
-    # - 🎬 电影收藏打分: movielist.md
-    - 🔞 JAV收藏打分: javlist.md
-    # - 💖 美食收藏: favlist.md
-  - 🔨工具: 
-    - 🔨 工具导航: tools.md
-  - ✈️旅行:
-    - ✈️ travel: travel.md
-  - 💩表情包: 
-    - 💩 沙雕/装逼: meme.md
-    - 📑 模板: meme/meme_template.md
-  - 🐵关于: 
-    - 🐵 关于: about.md
+plugins:
+  # - social:
+  #     cards_layout_options:
+  #       font_family: Noto Sans SC
+  - search
+  - blog:
+      enabled: true
+      blog_toc: true
+      post_url_format: "{slug}"
+      post_excerpt: required
+      post_excerpt_max_authors: 1
+      post_excerpt_separator: <!-- more -->
+      archive_toc: true
+      categories_toc: true
+      archive_url_format: "archive/{date}"
+      archive_url_date_format: "YYYY"
+      categories_url_format: "category/{slug}"
+      pagination_format: "~2~"
+      pagination_keep_content: true
+      draft: false
+      draft_on_serve: true
+  # 暂时注释掉 social 插件
+  # - social
+  - tags
+  # Uncomment these plugins after installing them
+  # - offline
+  # - optimize
 
-google_analytics: ['G-1PK298GK2Y', 'hi-andy.com']
+markdown_extensions:
+  - abbr
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+      title: 目录
+
+extra:
+  analytics:
+    provider: google
+    property: G-1PK298GK2Y
+  social:
+    # Update these with your own social media links
+    - icon: fontawesome/brands/github
+      link: https://github.com/it-andy-hou
+      name: Your GitHub Profile
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourusername
+      name: Your Twitter Profile
+  consent:
+    title: Cookie 同意
+    description: >- 
+      我们使用 cookies 来识别您的重复访问和偏好，以及
+      测量我们文档的有效性和分析网站流量。
+
+copyright: Since 2014 © | 安迪小站 |  运行在 <svg height="18" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg> <a href="https://github.com/">(Github)</a> | <a  href="https://hi-andy.com/donate">💰 打赏（在线乞讨）</a> <br>"To see the world, things dangerous to come to, to see behind walls, draw closer, to find each other and to feel. That is the purpose of life."
