@@ -9,6 +9,31 @@
             margin: 20px auto;
             padding: 20px;
         }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .author-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .author-link:hover {
+            text-decoration: underline;
+        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -70,7 +95,13 @@
     </style>
 </head>
 <body>
-    <h1>IP 地址提取工具</h1>
+    <div class="header">
+        <h1>IP 地址提取工具</h1>
+        <div class="author-info">
+            <img class="avatar" src="https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31is9hdq31a005obsmpjgkgvec6fv5vo?imageView2/2/w/540/format/webp|imageMogr2/strip2" alt="Author Avatar">
+            <a href="https://www.xiaohongshu.com/user/profile/617cb66700000000020243ee" class="author-link" target="_blank">🍠@奇技淫巧的安迪</a>
+        </div>
+    </div>
     <div class="form-group">
         <label for="input">输入包含 IP 地址的文本：</label>
         <textarea id="input" placeholder="粘贴任意内容，工具将自动提取其中的 IP 地址"></textarea>
