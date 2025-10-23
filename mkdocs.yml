@@ -1,4 +1,4 @@
-site_name: 奇技淫巧的安迪
+site_name: 安迪小站
 site_url: https://hi-andy.com
 theme:
   name: material
@@ -56,9 +56,7 @@ nav:
       - blog/index.md
   - 🧠AI: ai.md
   - 🚀效率: efficiency.md
-  - 📦工具包: tools.md
-  - 🔧安迪小工具: DevVault.md
-  - 📚脚本库: ScriptBox.md
+  - 📦工具: tools.md
   - 🐵关于: about.md
 
 plugins:
