@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>文本分隔符转换工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .author-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .author-link:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            min-height: 100px;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .separator-options {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .separator-options label:first-child {
+            margin-right: 10px;
+        }
+
+        .separator-options input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .radio-label {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .copy-btn {
+            background-color: #2196F3;
+            margin-top: 10px;
+        }
+
+        .copy-btn:hover {
+            background-color: #0b7dda;
+        }
+
+        .mode-btn {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .mode-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .mode-btn.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .mode-switch {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .update-log {
+            margin-top: 30px;
+            padding: 12px 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid #2196F3;
+            font-size: 12px;
+        }
+
+        .update-log h3 {
+            margin: 0 0 8px 0;
+            color: #555;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .update-log ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .update-log li {
+            padding: 4px 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .update-log a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .update-log a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>文本分隔符转换工具</h1>
+    <div class="author-info">
+        <img class="avatar" src="https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31is9hdq31a005obsmpjgkgvec6fv5vo?imageView2/2/w/540/format/webp|imageMogr2/strip2" alt="Author Avatar">
+        <a href="https://www.xiaohongshu.com/user/profile/617cb66700000000020243ee" class="author-link" target="_blank">🍠@奇技淫巧的安迪</a>
+    </div>
+    <div class="mode-switch" style="margin-bottom: 20px; text-align: center;">
+        <button id="merge-mode" class="mode-btn active" onclick="switchMode('merge')">合并模式（多行→一行）</button>
+        <button id="split-mode" class="mode-btn" onclick="switchMode('split')">分割模式（一行→多行）</button>
+    </div>
+
+    <div class="form-group">
+        <label for="input" id="input-label">输入文本（每行一个项目）：</label>
+        <textarea id="input"
+            placeholder="请输入文本，每行一个项目，例如：&#10;8081&#10;8184&#10;8182&#10;或者：&#10;苹果&#10;香蕉&#10;橙子"></textarea>
+    </div>
+
+    <div class="separator-options" id="separator-options">
+        <label id="separator-label">输出分隔符：</label>
+        <span class="radio-label">
+            <input type="radio" id="space" name="separator" value="space">
+            <label for="space">空格</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="comma" name="separator" value="comma" checked>
+            <label for="comma">逗号</label>
+        </span>
+
+        <span class="radio-label">
+            <input type="radio" id="pipe" name="separator" value="pipe">
+            <label for="pipe">竖线 |</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="semicolon" name="separator" value="semicolon">
+            <label for="semicolon">分号 ;</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="slash" name="separator" value="slash">
+            <label for="slash">斜杠 /</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="colon" name="separator" value="colon">
+            <label for="colon">冒号 :</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="backslash" name="separator" value="backslash">
+            <label for="backslash">反斜杠 \</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="single-quoted" name="separator" value="single-quoted">
+            <label for="single-quoted">单引号加逗号</label>
+        </span>
+        <span class="radio-label">
+            <input type="radio" id="quoted" name="separator" value="quoted">
+            <label for="quoted">双引号加逗号</label>
+        </span>
+    </div>
+
+    <div class="split-hint" id="split-hint" style="display: none; padding: 10px; background-color: #e8f5e9; border-left: 4px solid #4CAF50; margin: 15px 0; border-radius: 4px;">
+        <strong>提示：</strong>分割模式会将输入文本按空格、逗号、分号等常见分隔符自动分割成多行
+    </div>
+
+    <button id="copy-btn" class="copy-btn">复制结果</button>
+
+    <div id="result"></div>
+
+    <div class="update-log">
+        <h3>更新记录</h3>
+        <ul>
+            <li>
+                <strong>2025年10月23日</strong> - <a href="https://www.xiaohongshu.com/user/profile/617cb66700000000020243ee" target="_blank">@海里看星星</a> 需求：新增分割模式
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('copy-btn').addEventListener('click', copyResult);
+
+        // 当输入框内容改变时自动处理
+        document.getElementById('input').addEventListener('input', processLines);
+
+        // 当分隔符选项改变时更新显示
+        document.querySelectorAll('input[name="separator"]').forEach(radio => {
+            radio.addEventListener('change', updateDisplay);
+        });
+
+        // 存储处理后的行数据
+        let processedLines = [];
+        // 当前模式：merge（合并）或 split（分割）
+        let currentMode = 'merge';
+
+        function switchMode(mode) {
+            currentMode = mode;
+            const mergeBtn = document.getElementById('merge-mode');
+            const splitBtn = document.getElementById('split-mode');
+            const inputLabel = document.getElementById('input-label');
+            const separatorOptions = document.getElementById('separator-options');
+            const splitHint = document.getElementById('split-hint');
+            const inputArea = document.getElementById('input');
+
+            if (mode === 'merge') {
+                mergeBtn.classList.add('active');
+                splitBtn.classList.remove('active');
+                inputLabel.textContent = '输入文本（每行一个项目）：';
+                separatorOptions.style.display = 'flex';
+                splitHint.style.display = 'none';
+                inputArea.placeholder = '请输入文本，每行一个项目，例如：\n8081\n8184\n8182\n或者：\n苹果\n香蕉\n橙子';
+            } else {
+                mergeBtn.classList.remove('active');
+                splitBtn.classList.add('active');
+                inputLabel.textContent = '输入文本（空格或分隔符分隔的项目）：';
+                separatorOptions.style.display = 'none';
+                splitHint.style.display = 'block';
+                inputArea.placeholder = '请输入文本，用空格、逗号、分号等分隔，例如：\n8081 8184 8182 8183\n或者：\n苹果,香蕉,橙子\n或者：\n项目1;项目2;项目3';
+            }
+
+            processLines();
+        }
+
+        function processLines() {
+            const input = document.getElementById('input').value;
+
+            if (currentMode === 'merge') {
+                // 合并模式：按换行符分割，并过滤空行
+                processedLines = input.split(/\r?\n/).filter(line => line.trim() !== '');
+            } else {
+                // 分割模式：按空格、逗号、分号、竖线等常见分隔符自动分割
+                processedLines = input.split(/[\s,;|\t]+/)
+                    .map(item => item.trim())
+                    .filter(item => item !== '');
+            }
+
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const resultDiv = document.getElementById('result');
+            const separatorType = document.querySelector('input[name="separator"]:checked').value;
+
+            if (processedLines.length === 0) {
+                resultDiv.textContent = '';
+                return;
+            }
+
+            if (currentMode === 'merge') {
+                // 合并模式：将多行合并成一行
+                let separator;
+                switch (separatorType) {
+                    case 'space':
+                        separator = ' ';
+                        break;
+                    case 'comma':
+                        separator = ',';
+                        break;
+                    case 'pipe':
+                        separator = '|';
+                        break;
+                    case 'semicolon':
+                        separator = ';';
+                        break;
+                    case 'slash':
+                        separator = '/';
+                        break;
+                    case 'colon':
+                        separator = ':';
+                        break;
+                    case 'backslash':
+                        separator = '\\';
+                        break;
+                    case 'single-quoted':
+                        resultDiv.textContent = processedLines.map(line => `'${line}'`).join(',');
+                        if (processedLines.length > 0) {
+                            resultDiv.textContent += `\n\n共处理 ${processedLines.length} 项`;
+                        }
+                        return;
+                    case 'quoted':
+                        resultDiv.textContent = processedLines.map(line => `"${line}"`).join(',');
+                        if (processedLines.length > 0) {
+                            resultDiv.textContent += `\n\n共处理 ${processedLines.length} 项`;
+                        }
+                        return;
+                    default:
+                        separator = ' ';
+                }
+
+                resultDiv.textContent = processedLines.join(separator);
+                if (processedLines.length > 0) {
+                    resultDiv.textContent += `\n\n共处理 ${processedLines.length} 项`;
+                }
+            } else {
+                // 分割模式：将一行分割成多行
+                resultDiv.textContent = processedLines.join('\n');
+                if (processedLines.length > 0) {
+                    resultDiv.textContent += `\n\n共处理 ${processedLines.length} 项`;
+                }
+            }
+        }
+
+        function copyResult() {
+            // 只复制处理结果，不包括计数信息
+            const separatorType = document.querySelector('input[name="separator"]:checked').value;
+
+            let textToCopy;
+            
+            if (currentMode === 'merge') {
+                // 合并模式
+                if (separatorType === 'single-quoted') {
+                    textToCopy = processedLines.map(line => `'${line}'`).join(',');
+                } else if (separatorType === 'quoted') {
+                    textToCopy = processedLines.map(line => `"${line}"`).join(',');
+                } else {
+                    let separator;
+                    switch (separatorType) {
+                        case 'space':
+                            separator = ' ';
+                            break;
+                        case 'comma':
+                            separator = ',';
+                            break;
+                        case 'pipe':
+                            separator = '|';
+                            break;
+                        case 'semicolon':
+                            separator = ';';
+                            break;
+                        case 'slash':
+                            separator = '/';
+                            break;
+                        case 'colon':
+                            separator = ':';
+                            break;
+                        case 'backslash':
+                            separator = '\\';
+                            break;
+                        default:
+                            separator = ' ';
+                    }
+                    textToCopy = processedLines.join(separator);
+                }
+            } else {
+                // 分割模式：复制换行分隔的结果
+                textToCopy = processedLines.join('\n');
+            }
+
+            // 创建临时文本区域进行复制
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // 显示复制成功提示
+            const copyBtn = document.getElementById('copy-btn');
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = '复制成功!';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        }
+
+        // 页面加载时执行一次处理
+        window.addEventListener('load', processLines);
+    </script>
+</body>
+
+</html>
