@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>批量命令转换工具</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .author-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .author-link:hover {
+            text-decoration: underline;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 120px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            min-height: 100px;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+        .copy-btn {
+            background-color: #2196F3;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background-color: #0b7dda;
+        }
+        .desc {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>批量命令转换工具</h1>
+    <div class="author-info">
+        <img class="avatar" src="https://sns-avatar-qc.xhscdn.com/avatar/1040g2jo31is9hdq31a005obsmpjgkgvec6fv5vo?imageView2/2/w/540/format/webp|imageMogr2/strip2" alt="Author Avatar">
+        <a href="https://www.xiaohongshu.com/user/profile/617cb66700000000020243ee" class="author-link" target="_blank">🍠@奇技淫巧的安迪</a>
+    </div>
+    <div class="form-group">
+        <label for="cmd-template">命令模板：</label>
+        <input type="text" id="cmd-template" placeholder="如：ssh IP 'ls -l' 或 scp 文件名 IP:远程路径">
+        <div class="desc">请在模板中用 <b>IP</b> 作为占位符，表示将被实际 IP 替换。若无 IP 占位符，则原样复制多份命令。</div>
+    </div>
+    <div class="form-group">
+        <label for="ip-list">IP 地址列表：</label>
+        <textarea id="ip-list" placeholder="每行一个 IP，或用逗号分隔多个 IP"></textarea>
+        <div class="desc">支持多行或逗号分隔输入。</div>
+    </div>
+    <button id="convert-btn">转换</button>
+    <button id="copy-btn" class="copy-btn">复制输出</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById('convert-btn').addEventListener('click', generateCommands);
+        document.getElementById('copy-btn').addEventListener('click', copyResult);
+        let generatedCmds = [];
+        function generateCommands() {
+            const template = document.getElementById('cmd-template').value.trim();
+            const ipInput = document.getElementById('ip-list').value.trim();
+            const resultDiv = document.getElementById('result');
+            if (!template) {
+                alert('请填写命令模板！');
+                return;
+            }
+            if (!ipInput) {
+                alert('请填写 IP 地址列表！');
+                return;
+            }
+            // 解析 IP 列表，支持逗号和换行
+            let ips = ipInput.split(/[\s,]+/).map(ip => ip.trim()).filter(ip => ip);
+            // 去重
+            ips = [...new Set(ips)];
+            if (ips.length === 0) {
+                alert('未检测到有效的 IP 地址！');
+                return;
+            }
+            // 生成命令
+            generatedCmds = ips.map(ip => {
+                if (template.includes('IP')) {
+                    return template.replace(/IP/g, ip);
+                } else {
+                    return template;
+                }
+            });
+            resultDiv.textContent = generatedCmds.join('; ');
+            if (generatedCmds.length > 0) {
+                resultDiv.textContent += `\n\n共生成 ${generatedCmds.length} 条命令`;
+            }
+        }
+        function copyResult() {
+            if (!generatedCmds.length) {
+                alert('请先生成命令！');
+                return;
+            }
+            // 只复制命令部分
+            const textToCopy = generatedCmds.join('; ');
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const copyBtn = document.getElementById('copy-btn');
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = '复制成功!';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
