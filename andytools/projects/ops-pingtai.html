@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运维辅助智能体 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .content-area h2 {
+            border-left: 4px solid #a855f7;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(168,85,247,0.5); }
+    </style>
+</head>
+<body>
+
+    <!-- 导航 -->
+    <nav class="px-6 py-5 flex items-center justify-between border-b border-gray-800/60">
+        <a href="../andytools.html" class="text-blue-400 hover:text-blue-300 transition text-sm">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+        <span class="text-gray-500 text-sm">ops-pingtai</span>
+    </nav>
+
+    <!-- Hero -->
+    <header class="max-w-4xl mx-auto px-6 pt-14 pb-10">
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="text-purple-400 font-mono text-sm">Go / Gin / SQLite / AI</span>
+            <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+            </span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">运维辅助智能体</h1>
+        <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
+            面向金融证券核心运维场景打造的全栈 AIOps 平台，集资产管理、AI 诊断、批量运维工具与容灾链路监控于一体。
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6 text-sm text-gray-400">
+            <span><i class="fas fa-code-branch mr-1 text-purple-400"></i>Go 1.22</span>
+            <span><i class="fas fa-server mr-1 text-blue-400"></i>Gin Web Framework</span>
+            <span><i class="fas fa-database mr-1 text-emerald-400"></i>SQLite + Oracle ETL</span>
+            <span><i class="fas fa-robot mr-1 text-rose-400"></i>AI 智能诊断</span>
+        </div>
+    </header>
+
+    <!-- 占位图区域（待替换为真实截图） -->
+    <div class="max-w-4xl mx-auto px-6 mb-12">
+        <div class="glass rounded-2xl overflow-hidden shadow-2xl aspect-video flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 border border-gray-700">
+            <i class="fas fa-robot text-6xl text-purple-400 mb-5"></i>
+            <p class="text-gray-400 text-sm tracking-widest uppercase mb-2">ops-pingtai</p>
+            <p class="text-gray-600 text-xs">截图待上传</p>
+        </div>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-6 pb-20">
+        <div class="content-area">
+
+            <!-- 概述 -->
+            <div class="glass p-6 rounded-2xl mb-8">
+                <h2 class="!mt-0 !border-l-purple-400">项目背景</h2>
+                <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+                    在金融证券公司，传统运维面临资产散落多个系统、故障响应依赖人工、批量操作效率低下等痛点。
+                    本项目借助 Vibe Coding 驱动，以 Go 语言构建高性能后端服务，集成多个运维场景的实用工具，
+                    将分散的 CMDB 数据统一汇聚，并引入 AI 能力辅助故障诊断，实现从传统运维向 AIOps 的渐进式转型。
+                </p>
+            </div>
+
+            <!-- 功能模块 -->
+            <h2>核心功能模块</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+
+                <!-- CMDB 资产管理 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-900/60 flex items-center justify-center">
+                            <i class="fas fa-layer-group text-blue-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">CMDB 资产管理</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">统一管理 16 种资产类型，从服务器到云资源全覆盖。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-blue-500 mr-2"></i>Linux / Windows / 虚拟机</li>
+                        <li><i class="fas fa-circle text-xs text-blue-500 mr-2"></i>阿里云 / 腾讯云 / 操作系统</li>
+                        <li><i class="fas fa-circle text-xs text-blue-500 mr-2"></i>ES / MongoDB / MySQL / Oracle / SQL Server / TDSQL</li>
+                        <li><i class="fas fa-circle text-xs text-blue-500 mr-2"></i>互联网映射 / 服务器配件 / 测试环境</li>
+                    </ul>
+                </div>
+
+                <!-- AI 智能诊断 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-900/60 flex items-center justify-center">
+                            <i class="fas fa-robot text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">AI 智能诊断</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">通过 SSH 远程连接服务器，AI 实时分析日志与系统状态，辅助定位故障根因。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-purple-500 mr-2"></i>SSH 预设账户管理，快速接入目标服务器</li>
+                        <li><i class="fas fa-circle text-xs text-purple-500 mr-2"></i>异步任务队列，支持多任务并发诊断</li>
+                        <li><i class="fas fa-circle text-xs text-purple-500 mr-2"></i>任务实时查询与主动取消</li>
+                        <li><i class="fas fa-circle text-xs text-purple-500 mr-2"></i>SSH 连通性预验证，避免无效诊断</li>
+                    </ul>
+                </div>
+
+                <!-- NTP 批量对时 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900/60 flex items-center justify-center">
+                            <i class="fas fa-clock text-emerald-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">NTP 批量对时</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">批量检测内网服务器的 NTP 时间同步状态，快速定位时钟漂移问题。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-emerald-500 mr-2"></i>支持配置多个 NTP 服务器</li>
+                        <li><i class="fas fa-circle text-xs text-emerald-500 mr-2"></i>异步并发检测，结果实时轮询</li>
+                        <li><i class="fas fa-circle text-xs text-emerald-500 mr-2"></i>精确显示各服务器时间偏差</li>
+                    </ul>
+                </div>
+
+                <!-- 批量 Ping 检测 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-900/60 flex items-center justify-center">
+                            <i class="fas fa-satellite-dish text-rose-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">批量 Ping 检测</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">批量检测 IP 或主机名的网络连通性，快速评估网络变更影响范围。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-rose-500 mr-2"></i>支持批量输入 IP / 主机名</li>
+                        <li><i class="fas fa-circle text-xs text-rose-500 mr-2"></i>并发 Ping，返回延迟与丢包率</li>
+                        <li><i class="fas fa-circle text-xs text-rose-500 mr-2"></i>任务 ID 机制，支持长任务异步查询</li>
+                    </ul>
+                </div>
+
+                <!-- 批量 IP 查询 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-900/60 flex items-center justify-center">
+                            <i class="fas fa-search text-amber-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">批量 IP 跨表查询</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">输入多个 IP，自动跨操作系统、阿里云、腾讯云三张资产表联合检索，明确标注未命中 IP。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-amber-500 mr-2"></i>跨三表联合查询，一次输入全面覆盖</li>
+                        <li><i class="fas fa-circle text-xs text-amber-500 mr-2"></i>支持去重模式，消除跨表重复记录</li>
+                        <li><i class="fas fa-circle text-xs text-amber-500 mr-2"></i>自动标记「未找到」IP，结果完整呈现</li>
+                    </ul>
+                </div>
+
+                <!-- 容灾链路监控 -->
+                <div class="glass p-5 rounded-2xl feature-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-900/60 flex items-center justify-center">
+                            <i class="fas fa-network-wired text-cyan-400"></i>
+                        </div>
+                        <h3 class="font-bold text-base">容灾链路监控</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">实时查看 DSG 与英方容灾备份链路状态，快速掌握跨机房数据同步健康度。</p>
+                    <ul class="text-gray-400 text-sm space-y-1">
+                        <li><i class="fas fa-circle text-xs text-cyan-500 mr-2"></i>DSG 备份链路状态一览</li>
+                        <li><i class="fas fa-circle text-xs text-cyan-500 mr-2"></i>英方容灾链路实时查询</li>
+                        <li><i class="fas fa-circle text-xs text-cyan-500 mr-2"></i>支持链路数据定期自动同步</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ETL 数据同步 -->
+            <h2>Oracle ETL 定时同步</h2>
+            <div class="glass p-6 rounded-2xl mb-8">
+                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                    平台内置 Oracle → SQLite 全量同步引擎，将企业 CMDB（Oracle）中的资产数据定时拉取并写入本地 SQLite 镜像表，
+                    前端所有资产查询均基于镜像表响应，实现毫秒级查询速度，同时不影响生产数据库性能。
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
+                    <div class="bg-slate-800/60 rounded-xl p-3">
+                        <div class="text-blue-400 text-lg mb-1"><i class="fas fa-database"></i></div>
+                        <div class="text-gray-300 font-medium">Oracle CMDB</div>
+                        <div class="text-gray-500 text-xs mt-0.5">数据源</div>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-xl p-3">
+                        <div class="text-purple-400 text-lg mb-1"><i class="fas fa-sync-alt"></i></div>
+                        <div class="text-gray-300 font-medium">ETL 同步</div>
+                        <div class="text-gray-500 text-xs mt-0.5">Cron 定时任务</div>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-xl p-3">
+                        <div class="text-emerald-400 text-lg mb-1"><i class="fas fa-hdd"></i></div>
+                        <div class="text-gray-300 font-medium">SQLite 镜像</div>
+                        <div class="text-gray-500 text-xs mt-0.5">本地存储</div>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-xl p-3">
+                        <div class="text-rose-400 text-lg mb-1"><i class="fas fa-bolt"></i></div>
+                        <div class="text-gray-300 font-medium">毫秒响应</div>
+                        <div class="text-gray-500 text-xs mt-0.5">前端查询</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技术架构 -->
+            <h2>技术架构</h2>
+            <div class="glass p-6 rounded-2xl mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">后端</p>
+                        <ul class="text-gray-300 space-y-1.5">
+                            <li><i class="fab fa-golang text-blue-400 mr-2"></i>Go 1.22</li>
+                            <li><i class="fas fa-wind text-cyan-400 mr-2"></i>Gin Web Framework</li>
+                            <li><i class="fas fa-calendar-alt text-purple-400 mr-2"></i>robfig/cron 定时任务</li>
+                            <li><i class="fas fa-shield-alt text-emerald-400 mr-2"></i>embed 静态资源内嵌</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">数据层</p>
+                        <ul class="text-gray-300 space-y-1.5">
+                            <li><i class="fas fa-database text-orange-400 mr-2"></i>Oracle（数据源）</li>
+                            <li><i class="fas fa-hdd text-emerald-400 mr-2"></i>SQLite（本地镜像）</li>
+                            <li><i class="fas fa-table text-blue-400 mr-2"></i>16 张镜像资产表</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">前端 & 部署</p>
+                        <ul class="text-gray-300 space-y-1.5">
+                            <li><i class="fas fa-file-code text-yellow-400 mr-2"></i>原生 HTML + Tailwind CSS</li>
+                            <li><i class="fas fa-box text-purple-400 mr-2"></i>单二进制文件部署</li>
+                            <li><i class="fas fa-linux text-gray-300 mr-2"></i>Linux / Windows 双平台</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 更新日志 -->
+            <h2>更新日志</h2>
+            <div class="space-y-4 border-l-2 border-gray-700 pl-6 mb-4">
+                <div>
+                    <span class="text-purple-400 font-bold text-sm">2026-05</span>
+                    <p class="text-gray-300 mt-1 text-sm">英方链路查询上线；ETL 同步策略升级为全量刷新，解决镜像表数据残留问题。</p>
+                </div>
+                <div>
+                    <span class="text-purple-400 font-bold text-sm">2026-04</span>
+                    <p class="text-gray-300 mt-1 text-sm">新增 DSG 链路查询；批量 IP 查询支持去重模式及未命中 IP 标注。</p>
+                </div>
+                <div>
+                    <span class="text-purple-400 font-bold text-sm">2026-03</span>
+                    <p class="text-gray-300 mt-1 text-sm">AI 智能诊断模块上线，支持 SSH 预设账户与异步任务队列。</p>
+                </div>
+                <div>
+                    <span class="text-purple-400 font-bold text-sm">2026-02</span>
+                    <p class="text-gray-300 mt-1 text-sm">初始版本发布：CMDB 资产管理、NTP 批量对时、批量 Ping 检测核心功能落地。</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNSPod 管理工具 | 操作说明 & 更新日志</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .content-area h2 { border-left: 4px solid #3b82f6; padding-left: 1rem; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="p-6">
+        <a href="../index.html" class="text-blue-400 hover:text-blue-300 transition"><i class="fas fa-arrow-left mr-2"></i>返回首页</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        
+        <div class="content-area">
+            <h1 class="text-4xl font-extrabold mb-4">DNSPod 域名解析管理工具</h1>
+            <p class="text-gray-400 mb-8">版本：v1.0.0 | 最后更新：2026-02-10</p>
+
+            <img src="../imgs/dns-screenshots.gif" alt="界面截图" class="rounded-2xl border border-gray-700 mb-10 shadow-2xl">
+
+            <h2>🚀 功能特性</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                <li><strong>多账户管理：</strong> 本地加密存储多个 SecretID/Key，一键切换。</li>
+                <li><strong>实时检索：</strong> 基于主机名、备注、记录值的全字段模糊匹配。</li>
+                <li><strong>批量运维：</strong> 支持勾选多条记录进行一键启用或禁用。</li>
+                <li><strong>导出备份：</strong> 支持一键导出当前域名下所有解析记录到 Excel/CSV。</li>
+            </ul>
+
+            <h2>📖 操作说明</h2>
+            <div class="glass p-6 rounded-xl space-y-4">
+                <p>1. <strong>API 获取：</strong> 访问腾讯云控制台获取 API 密钥。</p>
+                <p>2. <strong>添加账户：</strong> 在软件左侧点击“管理账户”，填入 ID 和 Key。</p>
+                <p>3. <strong>解析管理：</strong> 选中域名后，右侧可直接进行增删改查操作。</p>
+            </div>
+
+            <h2>📝 更新日志</h2>
+            <div class="space-y-4 border-l-2 border-gray-700 pl-6">
+                <div>
+                    <span class="text-blue-400 font-bold">2026-02-10</span>
+                    <p class="text-gray-300 mt-1">初始版本发布：支持核心解析功能及多账户管理。</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

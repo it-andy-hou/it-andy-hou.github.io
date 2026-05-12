@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabbix 告警看板 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #f43f5e;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(244,63,94,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .severity-badge { padding: 3px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-rose-400 hover:text-rose-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-rose-900/60 border border-rose-500/40 text-rose-300">Python</span>
+                <span class="tag bg-red-900/60 border border-red-500/40 text-red-300">CGI</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">Zabbix API</span>
+                <span class="tag bg-amber-900/60 border border-amber-500/40 text-amber-300">ThreadPoolExecutor</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">
+                    <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Zabbix 告警看板</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                基于 Zabbix API 打造的金融级实时告警监控看板。聚焦关注主机组的活跃告警，提供多级别统计汇总，并发查询大规模主机群，是金融证券运维团队日常值班巡检的核心工具。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">技术栈：Python CGI + Zabbix API + 多线程并发 &nbsp;|&nbsp; 平台：Apache Web Server</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-bell text-2xl text-rose-400 mb-2"></i>
+                <p class="text-sm font-semibold">实时告警</p>
+                <p class="text-xs text-gray-500 mt-1">活跃触发器 · 自动刷新</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-chart-pie text-2xl text-red-400 mb-2"></i>
+                <p class="text-sm font-semibold">级别统计</p>
+                <p class="text-xs text-gray-500 mt-1">五级分类 · 数量汇总</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-server text-2xl text-orange-400 mb-2"></i>
+                <p class="text-sm font-semibold">主机组聚焦</p>
+                <p class="text-xs text-gray-500 mt-1">并发查询 · 按组过滤</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-tools text-2xl text-amber-400 mb-2"></i>
+                <p class="text-sm font-semibold">维护管理</p>
+                <p class="text-xs text-gray-500 mt-1">维护标记 · 窗口计划</p>
+            </div>
+        </div>
+
+        <!-- 告警级别 -->
+        <h2 class="section-title">🚨 告警级别体系</h2>
+        <div class="glass p-6 rounded-2xl">
+            <p class="text-gray-300 leading-relaxed mb-5">
+                对应 Zabbix 原生五级告警体系，配置差异化颜色标识，一眼区分告警严重程度，支持按级别快速筛选。
+            </p>
+            <div class="space-y-3">
+                <div class="flex items-center gap-4 bg-slate-800/60 rounded-xl p-3">
+                    <span class="severity-badge" style="background:#E45959;color:#fff;min-width:80px;text-align:center">灾难</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold">Priority 4 · Disaster</p>
+                        <p class="text-xs text-gray-400">服务中断、数据丢失等最高级别告警，需立即响应</p>
+                    </div>
+                    <span class="text-xs text-gray-500">最高优先级</span>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-800/60 rounded-xl p-3">
+                    <span class="severity-badge" style="background:#E97659;color:#fff;min-width:80px;text-align:center">严重</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold">Priority 3 · High</p>
+                        <p class="text-xs text-gray-400">性能严重劣化、核心功能异常，需快速处理</p>
+                    </div>
+                    <span class="text-xs text-gray-500">高优先级</span>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-800/60 rounded-xl p-3">
+                    <span class="severity-badge" style="background:#FFA059;color:#fff;min-width:80px;text-align:center">一般严重</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold">Priority 2 · Average</p>
+                        <p class="text-xs text-gray-400">性能下降、非核心组件异常，需在班次内处理</p>
+                    </div>
+                    <span class="text-xs text-gray-500">中优先级</span>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-800/60 rounded-xl p-3">
+                    <span class="severity-badge" style="background:#FFC859;color:#734d00;min-width:80px;text-align:center">警告</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold">Priority 1 · Warning</p>
+                        <p class="text-xs text-gray-400">指标接近阈值、潜在风险提示，需关注</p>
+                    </div>
+                    <span class="text-xs text-gray-500">低优先级</span>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-800/60 rounded-xl p-3">
+                    <span class="severity-badge" style="background:#7499FF;color:#fff;min-width:80px;text-align:center">信息</span>
+                    <div class="flex-1">
+                        <p class="text-sm font-semibold">Priority 0 · Information</p>
+                        <p class="text-xs text-gray-400">系统通知、状态变更等信息性告警，仅供参考</p>
+                    </div>
+                    <span class="text-xs text-gray-500">信息级别</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主机组聚焦 & 并发查询 -->
+        <h2 class="section-title">⚡ 主机组聚焦 & 并发查询</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                通过配置文件指定「关注主机组」ID 列表，看板只展示这些组的告警，聚焦核心业务。使用 Python ThreadPoolExecutor 并发调用 Zabbix API，大幅缩短大规模巡检的加载时间。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-orange-400 font-semibold mb-3 text-sm"><i class="fas fa-cog mr-2"></i>配置文件结构</div>
+                    <div class="font-mono text-xs text-gray-400 bg-slate-900/60 p-3 rounded-lg">
+                        <p class="text-gray-300">{</p>
+                        <p>&nbsp;&nbsp;"ZabbixUrl": "http://zabbix.xxx.com/api",</p>
+                        <p>&nbsp;&nbsp;"ApiToken": "your_api_token",</p>
+                        <p>&nbsp;&nbsp;"UpdateInterval": 60,</p>
+                        <p>&nbsp;&nbsp;"FocusedGroups": [101, 102, 105]</p>
+                        <p class="text-gray-300">}</p>
+                    </div>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-rose-400 font-semibold mb-3 text-sm"><i class="fas fa-tachometer-alt mr-2"></i>查询性能优化</div>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-emerald-400 mr-2"></i>主机列表 / 分组信息 / 触发器三路并发查询</li>
+                        <li><i class="fas fa-check text-emerald-400 mr-2"></i>API 请求超时控制（10s），防止单点卡死</li>
+                        <li><i class="fas fa-check text-emerald-400 mr-2"></i>查询耗时分段统计，便于定位性能瓶颈</li>
+                        <li><i class="fas fa-check text-emerald-400 mr-2"></i>主机 ID 映射缓存，避免重复 API 调用</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 告警详情展示 -->
+        <h2 class="section-title">📋 告警详情展示</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">每条告警展示完整上下文信息，辅助快速判断和处置。</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-server text-rose-400 mb-2"></i>
+                    <p class="text-sm font-semibold">主机名 & IP</p>
+                    <p class="text-xs text-gray-500 mt-1">关联主机标识</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-layer-group text-orange-400 mb-2"></i>
+                    <p class="text-sm font-semibold">所属主机组</p>
+                    <p class="text-xs text-gray-500 mt-1">业务分类归属</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-clock text-amber-400 mb-2"></i>
+                    <p class="text-sm font-semibold">告警时间 & 持续时长</p>
+                    <p class="text-xs text-gray-500 mt-1">精确到秒/分/时/天</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-exclamation-triangle text-red-400 mb-2"></i>
+                    <p class="text-sm font-semibold">告警级别</p>
+                    <p class="text-xs text-gray-500 mt-1">差异化颜色标识</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-comment-alt text-blue-400 mb-2"></i>
+                    <p class="text-sm font-semibold">触发器描述</p>
+                    <p class="text-xs text-gray-500 mt-1">含注释信息展开</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-wrench text-teal-400 mb-2"></i>
+                    <p class="text-sm font-semibold">维护状态</p>
+                    <p class="text-xs text-gray-500 mt-1">标记维护中主机</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 维护计划管理 -->
+        <h2 class="section-title">🔧 维护计划管理</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                支持记录和展示主机维护计划，在告警列表中自动标记「维护中」主机，避免运维人员因例行维护产生的告警产生误判，保障值班巡检质量。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-amber-900/60 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-calendar-alt text-amber-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">维护窗口记录</p>
+                            <p class="text-xs text-gray-400 mt-1">记录维护开始/结束时间、主机列表和维护原因</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-orange-900/60 border border-orange-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-tag text-orange-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">自动标记</p>
+                            <p class="text-xs text-gray-400 mt-1">告警列表中维护中主机自动显示维护标识，降低误报干扰</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-900/60 border border-rose-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-history text-rose-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">维护历史</p>
+                            <p class="text-xs text-gray-400 mt-1">维护记录持久化存储，支持查询历史维护窗口</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-amber-400 font-semibold mb-2 text-sm">数据存储路径</div>
+                    <div class="font-mono text-xs text-gray-400 bg-slate-900/60 p-3 rounded-lg">
+                        <p>cgi-bin/</p>
+                        <p>├── zabbix/</p>
+                        <p>│   └── config.json     # Zabbix 连接配置</p>
+                        <p>└── logs/</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;└── history/</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── maintenance_schedules.json</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技术实现亮点 -->
+        <h2 class="section-title">✨ 技术实现亮点</h2>
+        <div class="glass p-6 rounded-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-3">
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <h4 class="text-rose-400 font-semibold mb-2 text-sm">All-in-One CGI 架构</h4>
+                        <p class="text-xs text-gray-400">前端 HTML/CSS/JS 和后端 Python 逻辑合并在单个 CGI 文件中，零依赖部署，无需额外 Web 框架，在 Apache CGI 环境即可直接运行</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <h4 class="text-orange-400 font-semibold mb-2 text-sm">Zabbix API 封装</h4>
+                        <p class="text-xs text-gray-400">封装 ZabbixAPI 类，统一处理 JSON-RPC 2.0 协议通信，支持 Token 认证，异常自动捕获降级返回 None，不影响其他数据正常展示</p>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <h4 class="text-amber-400 font-semibold mb-2 text-sm">持续时间智能格式化</h4>
+                        <p class="text-xs text-gray-400">告警持续时间自动换算：秒 → 分钟 → 小时 → 天，显示「2天3小时」而非时间戳，直观反映告警持续情况</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <h4 class="text-red-400 font-semibold mb-2 text-sm">主机维护状态双源合并</h4>
+                        <p class="text-xs text-gray-400">维护状态优先从 trigger.hosts 字段获取，降级时从 host_map 查询，确保维护标记不遗漏，两套数据源互为补充</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-10 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

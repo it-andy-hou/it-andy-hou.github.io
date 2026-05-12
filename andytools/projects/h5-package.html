@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5 多环境打包工具 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #8b5cf6;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(139,92,246,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .env-badge { padding: 6px 16px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-violet-400 hover:text-violet-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-violet-900/60 border border-violet-500/40 text-violet-300">Python</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">CGI</span>
+                <span class="tag bg-fuchsia-900/60 border border-fuchsia-500/40 text-fuchsia-300">Shell</span>
+                <span class="tag bg-pink-900/60 border border-pink-500/40 text-pink-300">企业微信 Webhook</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">
+                    <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">H5 多环境打包工具</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                面向 H5 应用发布流程打造的多环境打包平台。支持仿真/0915测试/灰度/生产四套环境一键切换，生产环境强制二次确认保护，打包完成自动推送企业微信，将繁琐的手动打包流程标准化、可追溯化。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">技术栈：Python CGI + Shell 脚本 + 企业微信 Webhook &nbsp;|&nbsp; 平台：Apache Web Server</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-layer-group text-2xl text-violet-400 mb-2"></i>
+                <p class="text-sm font-semibold">多环境支持</p>
+                <p class="text-xs text-gray-500 mt-1">4 套环境 · 可视化选择</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-shield-alt text-2xl text-purple-400 mb-2"></i>
+                <p class="text-sm font-semibold">生产保护</p>
+                <p class="text-xs text-gray-500 mt-1">二次确认 · 防误操作</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-broadcast-tower text-2xl text-fuchsia-400 mb-2"></i>
+                <p class="text-sm font-semibold">部署状态</p>
+                <p class="text-xs text-gray-500 mt-1">实时查询 · 历史记录</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fab fa-weixin text-2xl text-pink-400 mb-2"></i>
+                <p class="text-sm font-semibold">微信通知</p>
+                <p class="text-xs text-gray-500 mt-1">自动推送 · 出包群</p>
+            </div>
+        </div>
+
+        <!-- 多环境选择 -->
+        <h2 class="section-title">🌍 四套环境支持</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                以卡片式 UI 呈现四套打包环境，操作人员点选即可切换，无需记忆复杂参数。每套环境对应独立的打包配置和目标服务器。
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-blue-500/30">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="font-bold text-lg">仿真环境</span>
+                        <span class="env-badge" style="background:#e3f2fd;color:#1976d2">FZ</span>
+                    </div>
+                    <p class="text-xs text-gray-400">适用于测试环境的打包，验证功能完整性</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-purple-500/30">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="font-bold text-lg">0915测试</span>
+                        <span class="env-badge" style="background:#f3e5f5;color:#7b1fa2">0915</span>
+                    </div>
+                    <p class="text-xs text-gray-400">专用测试环境，用于 0915 版本测试验证</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-orange-500/30">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="font-bold text-lg">灰度环境</span>
+                        <span class="env-badge" style="background:#fff3e0;color:#e65100">PRE</span>
+                    </div>
+                    <p class="text-xs text-gray-400">灰度发布环境，小流量验证上线效果</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-red-500/30">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="font-bold text-lg">生产环境</span>
+                        <span class="env-badge" style="background:#ffebee;color:#c62828">SC</span>
+                    </div>
+                    <p class="text-xs text-gray-400">正式生产环境，全量用户访问，需谨慎操作</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 生产环境保护 -->
+        <h2 class="section-title">🛡️ 生产环境保护机制</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                选择生产环境（SC）时，系统启动多层保护机制，防止在高压场景下因误操作导致线上事故。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-amber-400 font-semibold mb-2 text-sm"><i class="fas fa-exclamation-triangle mr-2"></i>步骤一：选择警告</div>
+                    <p class="text-xs text-gray-400">选中生产环境卡片后，页面立即展示黄色警告横幅「⚠️ 注意：您正在执行生产环境的打包操作，请确认这是您想要的操作。」</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-red-400 font-semibold mb-2 text-sm"><i class="fas fa-window-restore mr-2"></i>步骤二：弹窗确认</div>
+                    <p class="text-xs text-gray-400">点击「开始打包」后弹出确认对话框，明确提示「此操作将直接影响线上环境，请务必确认！」，需主动点击「确认打包」才继续</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-violet-400 font-semibold mb-2 text-sm"><i class="fas fa-spinner mr-2"></i>步骤三：执行锁定</div>
+                    <p class="text-xs text-gray-400">打包执行期间显示全屏加载蒙层和旋转进度指示，按钮禁用，防止重复提交，预计等待 3-5 分钟</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 部署状态 & 历史记录 -->
+        <h2 class="section-title">📊 部署状态 & 历史记录</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                页面顶部展示最近 2 天生产部署状态，右侧记录近 10 次打包历史，让每次操作有据可查。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-violet-400 font-semibold mb-3 text-sm"><i class="fas fa-table mr-2"></i>生产部署状态字段</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs bg-violet-900/40 text-violet-300 px-2 py-0.5 rounded">环境</span>
+                            <span class="text-xs bg-violet-900/40 text-violet-300 px-2 py-0.5 rounded">状态</span>
+                            <span class="text-xs bg-violet-900/40 text-violet-300 px-2 py-0.5 rounded">执行时间</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs bg-purple-900/40 text-purple-300 px-2 py-0.5 rounded">执行人</span>
+                            <span class="text-xs bg-purple-900/40 text-purple-300 px-2 py-0.5 rounded">创建人</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs bg-fuchsia-900/40 text-fuchsia-300 px-2 py-0.5 rounded">应用名称</span>
+                            <span class="text-xs bg-fuchsia-900/40 text-fuchsia-300 px-2 py-0.5 rounded">产品线</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs bg-pink-900/40 text-pink-300 px-2 py-0.5 rounded">Git 版本</span>
+                            <span class="text-xs bg-pink-900/40 text-pink-300 px-2 py-0.5 rounded">JIRA 链接</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-fuchsia-400 font-semibold mb-3 text-sm"><i class="fas fa-scroll mr-2"></i>打包历史记录</div>
+                    <div class="space-y-2">
+                        <div class="border-l-4 border-emerald-500 pl-3 py-1">
+                            <p class="text-xs text-gray-500">2026-05-13 14:32</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold">生产环境 (SC)</span>
+                                <span class="text-emerald-400 text-sm font-semibold">✓ 成功</span>
+                            </div>
+                            <p class="text-xs text-gray-400">打包成功，已推送微信群</p>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-3 py-1">
+                            <p class="text-xs text-gray-500">2026-05-13 10:15</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-semibold">仿真环境 (FZ)</span>
+                                <span class="text-emerald-400 text-sm font-semibold">✓ 成功</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 打包执行流程 -->
+        <h2 class="section-title">⚙️ 打包执行流程</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                前端通过 POST 请求调用后端 CGI，后端执行 Git Pull + Shell 打包脚本，全程捕获输出，结果返回前端详细展示，并写入历史记录。
+            </p>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-start gap-4 bg-slate-800/60 rounded-xl p-4">
+                    <div class="w-8 h-8 rounded-full bg-violet-900/60 border border-violet-500/30 flex items-center justify-center flex-shrink-0 font-bold text-violet-300 text-sm">1</div>
+                    <div>
+                        <p class="text-sm font-semibold">前端触发</p>
+                        <p class="text-xs text-gray-400 mt-1">POST /cgi-bin/h5_package_api.py，参数 action=package&amp;environment=sc</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-slate-800/60 rounded-xl p-4">
+                    <div class="w-8 h-8 rounded-full bg-purple-900/60 border border-purple-500/30 flex items-center justify-center flex-shrink-0 font-bold text-purple-300 text-sm">2</div>
+                    <div>
+                        <p class="text-sm font-semibold">Git Pull 更新代码</p>
+                        <p class="text-xs text-gray-400 mt-1">拉取最新代码，stdout/stderr 分别捕获，返回前端展示 Git 输出详情</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-slate-800/60 rounded-xl p-4">
+                    <div class="w-8 h-8 rounded-full bg-fuchsia-900/60 border border-fuchsia-500/30 flex items-center justify-center flex-shrink-0 font-bold text-fuchsia-300 text-sm">3</div>
+                    <div>
+                        <p class="text-sm font-semibold">Shell 打包脚本执行</p>
+                        <p class="text-xs text-gray-400 mt-1">根据所选环境调用对应打包脚本，捕获 package_output/package_error，超时控制防止卡死</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 bg-slate-800/60 rounded-xl p-4">
+                    <div class="w-8 h-8 rounded-full bg-pink-900/60 border border-pink-500/30 flex items-center justify-center flex-shrink-0 font-bold text-pink-300 text-sm">4</div>
+                    <div>
+                        <p class="text-sm font-semibold">结果通知 & 记录</p>
+                        <p class="text-xs text-gray-400 mt-1">成功/失败结果推送至「佣金宝出包小分队」企业微信群，同时写入历史记录 JSON 文件</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结果详情展示 -->
+        <h2 class="section-title">📋 打包结果详情</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                打包完成后弹出结果模态框，详细展示每个阶段的输出，方便快速定位问题。
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-check-circle text-emerald-400 text-2xl mb-2"></i>
+                    <p class="text-sm font-semibold">成功/失败状态</p>
+                    <p class="text-xs text-gray-500 mt-1">醒目颜色标识</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fab fa-git-alt text-orange-400 text-2xl mb-2"></i>
+                    <p class="text-sm font-semibold">Git Pull 输出</p>
+                    <p class="text-xs text-gray-500 mt-1">stdout + stderr</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-box text-violet-400 text-2xl mb-2"></i>
+                    <p class="text-sm font-semibold">打包脚本输出</p>
+                    <p class="text-xs text-gray-500 mt-1">完整日志可滚动</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 text-center">
+                    <i class="fas fa-bug text-red-400 text-2xl mb-2"></i>
+                    <p class="text-sm font-semibold">错误详情</p>
+                    <p class="text-xs text-gray-500 mt-1">精确定位失败原因</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- API 设计 -->
+        <h2 class="section-title">🔌 API 接口设计</h2>
+        <div class="glass p-6 rounded-2xl">
+            <p class="text-gray-300 mb-4">后端 CGI 提供 RESTful 风格的接口，前端通过 fetch() 调用，支持 CORS 跨域访问。</p>
+            <div class="space-y-3">
+                <div class="bg-slate-800/60 rounded-xl p-3 flex items-center gap-4">
+                    <span class="text-xs font-mono bg-emerald-900/60 text-emerald-300 px-2 py-1 rounded">GET</span>
+                    <code class="text-xs text-gray-300 flex-1">?action=get_deployment_status</code>
+                    <span class="text-xs text-gray-500">获取最近生产部署状态</span>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 flex items-center gap-4">
+                    <span class="text-xs font-mono bg-emerald-900/60 text-emerald-300 px-2 py-1 rounded">GET</span>
+                    <code class="text-xs text-gray-300 flex-1">?action=get_history&amp;limit=10</code>
+                    <span class="text-xs text-gray-500">获取打包历史记录</span>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-3 flex items-center gap-4">
+                    <span class="text-xs font-mono bg-blue-900/60 text-blue-300 px-2 py-1 rounded">POST</span>
+                    <code class="text-xs text-gray-300 flex-1">action=package&amp;environment=fz|0915|pre|sc</code>
+                    <span class="text-xs text-gray-500">执行打包任务</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-10 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

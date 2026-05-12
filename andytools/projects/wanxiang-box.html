@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万象匣 SSH 运维工具箱 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #10b981;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(16,185,129,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .timeline-item { border-left: 2px solid #1e293b; padding-left: 1.5rem; position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #10b981; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-emerald-400 hover:text-emerald-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-emerald-900/60 border border-emerald-500/40 text-emerald-300">Electron</span>
+                <span class="tag bg-blue-900/60 border border-blue-500/40 text-blue-300">Node.js</span>
+                <span class="tag bg-slate-700/60 border border-slate-500/40 text-slate-300">SQLite</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">
+                    <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">万象匣 SSH 运维工具箱</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                面向金融证券核心系统运维场景打造的 Windows 桌面应用。将原有基于 Linux CGI 的批量运维工具，重构为现代化 Electron 客户端，支持千台级服务器的脚本执行、文件分发与工程化编排，彻底替代分散的命令行操作。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">版本：v1.0 &nbsp;|&nbsp; 平台：Windows &nbsp;|&nbsp; 最后更新：2026-03</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-server text-2xl text-emerald-400 mb-2"></i>
+                <p class="text-sm font-semibold">主机管理</p>
+                <p class="text-xs text-gray-500 mt-1">批量导入 · 智能筛选</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-terminal text-2xl text-blue-400 mb-2"></i>
+                <p class="text-sm font-semibold">批量执行</p>
+                <p class="text-xs text-gray-500 mt-1">脚本 · 命令 · 并发</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-cloud-upload-alt text-2xl text-teal-400 mb-2"></i>
+                <p class="text-sm font-semibold">文件上传</p>
+                <p class="text-xs text-gray-500 mt-1">SCP 分发 · 备份策略</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-project-diagram text-2xl text-purple-400 mb-2"></i>
+                <p class="text-sm font-semibold">工程任务</p>
+                <p class="text-xs text-gray-500 mt-1">DAG 编排 · 通知</p>
+            </div>
+        </div>
+
+        <!-- 主机管理 -->
+        <h2 class="section-title">🖥️ 主机管理</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Excel 批量导入/导出：</strong>支持标准模板导入（IP、端口、用户名、密码、系统名称、应用名称、机房、环境等字段），同时支持批量更新已有主机信息</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>多维度智能筛选：</strong>按系统名称、应用名称、机房、环境联动筛选，关键字模糊搜索，筛选结果实时高亮</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>批量连接探测：</strong>支持 Ping (ICMP) 和 SSH 端口两种探测方式，探测结果实时写入主机状态并持久化，可导出探测报告 Excel</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>统计看板：</strong>侧边栏实时显示总主机数、在线/离线/未知分类统计</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>批量 IP 复制：</strong>勾选主机后一键复制 IP 列表（逗号分隔）到剪贴板</li>
+            </ul>
+        </div>
+
+        <!-- 脚本管理 -->
+        <h2 class="section-title">📜 脚本管理</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>脚本库统一管理：</strong>创建、编辑、删除脚本，支持脚本复制快速生成副本，更新时间倒序排列</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>标签分类筛选：</strong>为脚本打标签，通过标签快速过滤定位目标脚本</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>Excel 批量导入/导出：</strong>脚本库整体导入导出备份，方便在不同环境间迁移</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>执行前预览：</strong>在脚本执行选择脚本时，可直接预览脚本内容，无需跳转脚本管理页</li>
+            </ul>
+        </div>
+
+        <!-- 脚本执行 & 命令执行 -->
+        <h2 class="section-title">⚡ 脚本执行 & 命令执行</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>两种执行模式：</strong>「脚本执行」从脚本库选脚本执行；「命令执行」直接输入临时 Shell 命令，两者均支持全部批量功能</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>主机灵活选择：</strong>多维筛选勾选 + IP 批量粘贴输入，支持自动识别并校验 IP 是否在管理列表中</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>并发执行控制：</strong>可配置并发数与超时时间，并发批次执行，实时进度百分比展示</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>实时日志输出：</strong>带主机 IP 前缀的彩色实时日志，自动限制 1000 行防止卡顿，支持一键复制/下载日志</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>智能退出码处理：</strong>过滤命令（grep/awk）无匹配时退出码 1 自动识别为"执行成功，无匹配结果"，避免误报</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>sudo 执行支持：</strong>可选"使用 sudo 执行"，适配免密 sudo 配置的业务账户场景</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>定时执行：</strong>勾选"定时执行"并设置时间，任务保存为待调度状态，到时自动触发</li>
+            </ul>
+        </div>
+
+        <!-- 文件上传 -->
+        <h2 class="section-title">📦 文件上传</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>SCP/SFTP 批量分发：</strong>选择多个本地文件，批量推送到所有目标主机的指定目录</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>文件冲突策略：</strong>支持「覆盖」「跳过」「备份后覆盖」三种策略，备份自动添加时间戳后缀</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>路径安全校验：</strong>自动检测目标路径是否为目录，防止误操作覆盖文件；路径不存在时可配置「自动创建」或「报错中止」</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>上传进度追踪：</strong>每台主机独立显示上传状态，实时日志展示上传过程</li>
+            </ul>
+        </div>
+
+        <!-- 任务调度 & 任务记录 -->
+        <h2 class="section-title">🕐 任务调度 & 执行记录</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>定时任务管理：</strong>列表显示所有待执行的定时任务，实时倒计时，支持调整时间、立即执行、删除</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>轮询调度机制：</strong>主进程每 60 秒轮询数据库，对比当前时间触发到期任务，抵抗系统时间修改和休眠唤醒，过期超 1 小时自动标记为"错过"</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>执行历史记录：</strong>完整记录每次脚本执行、命令执行、文件上传的执行结果，支持状态筛选和任务类型筛选</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>记录排序：</strong>最新执行记录置顶显示；脚本执行列表独立展示，不混入命令执行和文件上传记录</li>
+            </ul>
+        </div>
+
+        <!-- 工程任务 -->
+        <h2 class="section-title">🔧 工程任务（多步骤编排）</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">将脚本执行、命令执行、文件上传三类操作编排为一个完整的自动化工程，适用于版本部署、批量变更等复杂运维场景。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>步骤编排：</strong>可视化拖拽排序，每步骤独立配置类型（上传/命令/脚本）、目标主机、超时时间</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>DAG 依赖关系：</strong>步骤可指定依赖前置步骤，支持串行与并行混合执行</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>严格模式：</strong>任一步骤失败，工程立即中止，后续步骤不再执行，确保部署原子性</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>模板复用：</strong>常用工程可保存为模板，基于模板快速创建新工程</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>企业微信通知：</strong>执行成功/失败/中断时推送 Webhook 通知，包含步骤统计和失败详情</li>
+                <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>执行历史：</strong>记录每次工程执行的详细结果，包含步骤级别的耗时与状态</li>
+            </ul>
+        </div>
+
+        <!-- 技术架构 -->
+        <h2 class="section-title">🏗️ 技术架构</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-blue-400 text-xl mb-3"><i class="fas fa-desktop"></i></div>
+                <h3 class="font-bold mb-2">前端渲染层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Electron Renderer + 原生 HTML5 / CSS3 / JavaScript，无框架依赖，轻量高效</p>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-emerald-400 text-xl mb-3"><i class="fas fa-cogs"></i></div>
+                <h3 class="font-bold mb-2">主进程逻辑层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Node.js + node-ssh，IPC 通信，任务调度器，SSH 连接管理，SCP 文件传输</p>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-purple-400 text-xl mb-3"><i class="fas fa-database"></i></div>
+                <h3 class="font-bold mb-2">数据存储层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">SQLite 本地数据库，better-sqlite3，存储主机信息、脚本库、执行记录、工程任务</p>
+            </div>
+        </div>
+
+        <!-- 更新日志 -->
+        <h2 class="section-title">📝 迭代历程</h2>
+        <div class="space-y-0 pl-2">
+            <div class="timeline-item">
+                <span class="text-emerald-400 font-bold text-sm">2026-03</span>
+                <p class="text-gray-300 mt-1 text-sm">工程任务功能上线：多步骤 DAG 编排、失败即停、企业微信通知、执行模板</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-emerald-400 font-bold text-sm">2026-01</span>
+                <p class="text-gray-300 mt-1 text-sm">批量连接探测（Ping/SSH）、探测结果持久化到主机状态、导出探测报告；脚本执行/命令执行/文件上传记录排序优化；脚本名称列展示</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-emerald-400 font-bold text-sm">2025-12</span>
+                <p class="text-gray-300 mt-1 text-sm">脚本管理标签筛选、复制脚本功能；grep/awk 无匹配智能退出码识别；sudo 执行选项</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-emerald-400 font-bold text-sm">2025-11</span>
+                <p class="text-gray-300 mt-1 text-sm">定时任务调度器；文件上传页面（SCP 分发、备份策略）；命令执行页面；脚本执行日志复制/下载；主机 IP 批量输入选择；Excel 批量导入主机（含模板下载）</p>
+            </div>
+            <div class="timeline-item" style="border-left-color: transparent;">
+                <span class="text-emerald-400 font-bold text-sm">2025-10</span>
+                <p class="text-gray-300 mt-1 text-sm">项目启动：主机管理（增删改查、筛选）、脚本管理、脚本执行、任务历史记录核心功能完成</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding on Electron</p>
+    </footer>
+
+</body>
+</html>

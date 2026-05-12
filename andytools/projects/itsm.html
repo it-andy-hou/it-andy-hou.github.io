@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITSM 快速搜索下载工具 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #14b8a6;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(20,184,166,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .timeline-item { border-left: 2px solid #1e293b; padding-left: 1.5rem; position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #14b8a6; }
+        .panel-demo { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(20,184,166,0.2); border-radius: 12px; padding: 1rem; font-family: monospace; font-size: 0.8rem; }
+        .table-header { background: rgba(20,184,166,0.15); }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-teal-400 hover:text-teal-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-teal-900/60 border border-teal-500/40 text-teal-300">Tampermonkey</span>
+                <span class="tag bg-emerald-900/60 border border-emerald-500/40 text-emerald-300">JavaScript</span>
+                <span class="tag bg-cyan-900/60 border border-cyan-500/40 text-cyan-300">ITSM API</span>
+                <span class="tag bg-green-900/60 border border-green-500/40 text-green-300">xlsx.js</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">
+                    <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">ITSM 快速搜索下载工具</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                注入 ITSM 系统的多功能工具箱插件。悬浮🔍按钮一键展开，免去多页面跳转，直接完成 CMDB 资产搜索、批量导出、值班查看，并内置专业的网络申请表单生成器，支持 IP 机房自动识别与 Excel 标准导出。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">版本：v0.2 &nbsp;|&nbsp; 适用系统：内部运维管理系统 &nbsp;|&nbsp; 最后更新：2026-03</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-search text-2xl text-teal-400 mb-2"></i>
+                <p class="text-sm font-semibold">CMDB 搜索</p>
+                <p class="text-xs text-gray-500 mt-1">模糊匹配 · 多字段</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-file-excel text-2xl text-emerald-400 mb-2"></i>
+                <p class="text-sm font-semibold">一键下载</p>
+                <p class="text-xs text-gray-500 mt-1">资产导出 · Excel</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-calendar-alt text-2xl text-cyan-400 mb-2"></i>
+                <p class="text-sm font-semibold">我的值班</p>
+                <p class="text-xs text-gray-500 mt-1">本月 · 下月</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-network-wired text-2xl text-green-400 mb-2"></i>
+                <p class="text-sm font-semibold">网络申请表单</p>
+                <p class="text-xs text-gray-500 mt-1">机房识别 · 导出</p>
+            </div>
+        </div>
+
+        <!-- CMDB 搜索 -->
+        <h2 class="section-title">🔍 CMDB 关键字搜索</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">在搜索框输入关键字后按 Enter 或点击「搜索」按钮，无需跳转 CMDB 页面。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>多字段模糊匹配：</strong>支持按资源名称、IP 地址、负责人姓名、所属应用等字段模糊搜索，单次返回最多 10 条结果</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>结构化展示：</strong>每条结果清晰展示资源类型、名称、IP、负责人、所属应用等关键信息</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>Token 鉴权：</strong>自动读取浏览器 localStorage 中的 ACCESS_TOKEN 完成身份认证，无需额外登录</li>
+            </ul>
+            <div class="panel-demo mt-4">
+                <p class="text-teal-300 mb-2">[服务器] web-app-01</p>
+                <p class="text-gray-500 ml-4">IP: 172.16.24.101</p>
+                <p class="text-gray-500 ml-4">负责人: 张三</p>
+                <p class="text-gray-500 ml-4">所属应用: 某业务系统</p>
+            </div>
+        </div>
+
+        <!-- 一键下载 -->
+        <h2 class="section-title">📥 一键下载我的信息</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>智能关键字：</strong>搜索框有内容时以当前关键字为条件导出；搜索框为空时自动使用当前登录用户姓名作为关键字</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>Excel 格式导出：</strong>调用 ITSM 下载接口，返回 .xlsx 格式文件，自动触发浏览器下载</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>登录态检测：</strong>自动识别返回内容类型，若返回 JSON 则判断是否登录失效并提示</li>
+            </ul>
+        </div>
+
+        <!-- 我的值班 -->
+        <h2 class="section-title">📅 我的值班安排</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">打开工具箱时自动加载，无需手动触发。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>本月+下月：</strong>并发请求两个月的值班排班数据，确保提前看到下月安排</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>过期过滤：</strong>仅展示今天及之后的值班日期，历史已过期的安排自动隐藏</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>去重排序：</strong>多接口数据自动去重，按日期升序整洁排列</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>姓名识别：</strong>优先从页面导航栏提取中文姓名，兜底使用 localStorage 中的 USERNAME，最多重试 15 次</li>
+            </ul>
+            <div class="panel-demo mt-4">
+                <p class="text-cyan-300 mb-2">📅 我的值班 (3)</p>
+                <p class="text-gray-400 ml-4">2026-05-15 &nbsp; 运维值班</p>
+                <p class="text-gray-400 ml-4">2026-05-22 &nbsp; 运维值班</p>
+                <p class="text-gray-400 ml-4">2026-06-01 &nbsp; 运维值班</p>
+            </div>
+        </div>
+
+        <!-- 网络申请表单 -->
+        <h2 class="section-title">📋 网络申请表单生成器</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">全屏覆盖层表单工具，专为网络访问权限申请流程设计，支持多规则批量生成。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>多规则管理：</strong>支持新增/复制/删除规则，每条规则独立配置源地址、目标地址、端口号及用途说明</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>IP 机房自动识别：</strong>内置完整的 IP 网段与机房对应表，覆盖成都西信、上海锦绣申江、333世纪大厦、东莞南方中心等 8 个机房，自动计算源/目标机房</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>笛卡尔积展开：</strong>同规则内多个源地址与目标地址按机房分组，自动生成 源机房×目标机房 的全量组合记录</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>端口格式化：</strong>支持逗号/换行/斜杠/空格分隔多个端口，失焦后自动统一格式</li>
+                <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>预览 + 导出：</strong>生成后先预览数据表格，确认无误后导出含 ITSM 标准表头的 .xlsx 文件，可直接用于系统批量导入</li>
+            </ul>
+
+            <!-- 机房覆盖表 -->
+            <div class="mt-4">
+                <p class="text-gray-400 text-sm mb-3 font-semibold">内置机房覆盖范围：</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">华西主机房</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">华东主机房</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">华东备用机房</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">华南机房</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">同城灾备机房</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">异地灾备机房A</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">异地灾备机房B</div>
+                    <div class="bg-slate-800/60 border border-slate-700/60 rounded-lg px-3 py-2 text-xs text-gray-300">华西容灾机房</div>
+                </div>
+            </div>
+
+            <!-- 导出字段 -->
+            <div class="mt-4">
+                <p class="text-gray-400 text-sm mb-2 font-semibold">导出 Excel 标准表头：</p>
+                <div class="panel-demo">
+                    <p class="text-gray-400">生效时间 | 生效开始日期 | 生效结束日期 | 源地址 | 源地址所在机房 | 源地址用途</p>
+                    <p class="text-gray-400">目标地址 | 目标地址所在机房 | 目标地址用途 | 协议 | 端口号 | 申请原因</p>
+                    <p class="text-gray-400">是否涉及AI大模型 | 是否涉及系统间API调用 | 源系统 | 目标系统 | 目标系统负责人</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 安装使用 -->
+        <h2 class="section-title">🚀 安装与使用</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-teal-400 text-xl mb-3"><i class="fas fa-download"></i></div>
+                <h3 class="font-bold mb-2">安装步骤</h3>
+                <ol class="text-gray-400 text-sm leading-relaxed space-y-1 list-decimal list-inside">
+                    <li>浏览器安装 Tampermonkey 扩展</li>
+                    <li>打开管理面板 → 新建脚本</li>
+                    <li>粘贴脚本内容并保存</li>
+                    <li>访问内部运维管理系统自动生效</li>
+                </ol>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-emerald-400 text-xl mb-3"><i class="fas fa-info-circle"></i></div>
+                <h3 class="font-bold mb-2">注意事项</h3>
+                <ul class="text-gray-400 text-sm leading-relaxed space-y-1">
+                    <li>• 依赖浏览器登录 Token（ACCESS_TOKEN）</li>
+                    <li>• Excel 导出依赖 CDN 加载的 xlsx.js</li>
+                    <li>• 未在机房表中的 IP 显示为"未知机房"</li>
+                    <li>• 点击背景区域或 × 关闭网络申请表单</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 更新日志 -->
+        <h2 class="section-title">📝 迭代历程</h2>
+        <div class="space-y-0 pl-2">
+            <div class="timeline-item">
+                <span class="text-teal-400 font-bold text-sm">v0.2 · 2026-03</span>
+                <p class="text-gray-300 mt-1 text-sm">网络申请表单生成器上线：多规则管理、IP 机房自动识别、笛卡尔积展开、Excel 标准导出</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-teal-400 font-bold text-sm">v0.1 · 2026-02</span>
+                <p class="text-gray-300 mt-1 text-sm">我的值班功能上线：本月+下月排班并发拉取、过期过滤、去重排序</p>
+            </div>
+            <div class="timeline-item" style="border-left-color: transparent;">
+                <span class="text-teal-400 font-bold text-sm">v0.1 · 2026-01</span>
+                <p class="text-gray-300 mt-1 text-sm">项目启动：CMDB 关键字搜索、一键下载我的信息核心功能完成</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

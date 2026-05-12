@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBOOS 流程瓶颈透视助手 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(59,130,246,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .timeline-item { border-left: 2px solid #1e293b; padding-left: 1.5rem; position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #3b82f6; }
+        .panel-demo { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59,130,246,0.2); border-radius: 12px; padding: 1rem; font-family: monospace; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-blue-400 hover:text-blue-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-blue-900/60 border border-blue-500/40 text-blue-300">Tampermonkey</span>
+                <span class="tag bg-sky-900/60 border border-sky-500/40 text-sky-300">JavaScript</span>
+                <span class="tag bg-indigo-900/60 border border-indigo-500/40 text-indigo-300">EBOOS API</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">
+                    <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">EBOOS 流程瓶颈透视助手</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                注入 EBOOS 工作流系统的效率插件。无需在多个菜单间反复跳转，右下角悬浮双按钮即可一键掌握「待我审批」队列与「我发起的在途流程」，精准定位流程阻塞在哪个审批人手中，助力提升审批效率与跟进响应速度。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">版本：v1.4 &nbsp;|&nbsp; 适用系统：内部审批流程系统 &nbsp;|&nbsp; 最后更新：2026-01</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-inbox text-2xl text-blue-400 mb-2"></i>
+                <p class="text-sm font-semibold">待我审批</p>
+                <p class="text-xs text-gray-500 mt-1">汇总 · 等待时长</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-sitemap text-2xl text-sky-400 mb-2"></i>
+                <p class="text-sm font-semibold">我的流程</p>
+                <p class="text-xs text-gray-500 mt-1">在途 · 阻塞分析</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-chart-bar text-2xl text-indigo-400 mb-2"></i>
+                <p class="text-sm font-semibold">Top 10 统计</p>
+                <p class="text-xs text-gray-500 mt-1">分布 · 排名</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-bell text-2xl text-cyan-400 mb-2"></i>
+                <p class="text-sm font-semibold">催办</p>
+                <p class="text-xs text-gray-500 mt-1">一键 · 批量</p>
+            </div>
+        </div>
+
+        <!-- 待我审批 -->
+        <h2 class="section-title">📥 待我审批面板</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">页面加载后约 1 秒自动抓取数据，右下角绿色按钮显示待审条数。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>自动汇总：</strong>从 EBOOS 接口并发拉取所有待审批流程，双接口数据自动去重合并，确保不遗漏</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>等待时长计算：</strong>精确显示流程送达至今的等待时间（天/小时/分钟），橙色高亮超时流程</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>快速跳转：</strong>点击条目标题直接在新标签页打开对应流程详情页，无需手动导航</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>申请人统计：</strong>展示申请人信息，便于按优先级处理审批</li>
+            </ul>
+            <div class="panel-demo mt-4">
+                <p class="text-blue-300 mb-2">[待审] 某某系统升级申请</p>
+                <p class="text-gray-500 ml-4">申请人：张三</p>
+                <p class="text-gray-500 ml-4">当前处理：李四（当前责任人）</p>
+                <p class="text-gray-500 ml-4">送审时间：2026-04-18 10:30 &nbsp;<span class="text-orange-400">已等待 3天2小时</span></p>
+            </div>
+        </div>
+
+        <!-- 我的流程看板 -->
+        <h2 class="section-title">📊 我的流程看板</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">蓝色按钮显示在途流程总数，面板分两部分：阻塞分布统计 + 在途流程清单。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>阻塞分布 Top 10：</strong>统计各审批人手中积压的流程数量，数量最多的排在最前，一眼识别卡单关键节点</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>在途流程清单：</strong>列出所有发起中的在途流程，显示当前处理人</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>上步完成信息：</strong>异步加载每条流程的审批日志，展示上一步完成人及完成时间，方便判断推进状态</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>催办功能：</strong>对阻塞超时的流程可直接发起催办，调用系统催办接口</li>
+            </ul>
+            <div class="panel-demo mt-4">
+                <p class="text-sky-300 mb-2">▼ 流程阻塞分布</p>
+                <p class="text-gray-400 ml-4">张三 &nbsp;&nbsp; <span class="text-blue-400">[3 单]</span></p>
+                <p class="text-gray-400 ml-4">李四 &nbsp;&nbsp; <span class="text-blue-400">[2 单]</span></p>
+                <p class="text-gray-400 ml-4">王五 &nbsp;&nbsp; <span class="text-blue-400">[1 单]</span></p>
+                <p class="text-sky-300 mt-3 mb-2">▼ 在途流程清单</p>
+                <p class="text-gray-400 ml-4">[待审] 某某申请流程</p>
+                <p class="text-gray-500 ml-8">当前处理：张三</p>
+                <p class="text-gray-500 ml-8">✅ 上步完成：李四 于 2026-04-17 14:22 <span class="text-yellow-400">(已等待 1天3小时)</span></p>
+            </div>
+        </div>
+
+        <!-- 数据处理机制 -->
+        <h2 class="section-title">⚙️ 数据处理机制</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>三路 API 并发：</strong>同时调用「我创建」「待我审批」「全部流程」三个接口，每路取前 100 条，互为补充</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>去重合并策略：</strong>以 fdId 为唯一键对双接口数据去重，优先保留待审批接口的原始数据</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>状态过滤：</strong>只展示「待审」状态记录，已完成/已撤回等状态自动过滤</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>审批日志异步加载：</strong>每条流程的上步完成信息通过独立接口加载，间隔 300ms 依次请求，避免触发限流</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>防缓存机制：</strong>每次请求附带随机参数，确保获取最新数据</li>
+            </ul>
+        </div>
+
+        <!-- 安装使用 -->
+        <h2 class="section-title">🚀 安装与使用</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-blue-400 text-xl mb-3"><i class="fas fa-download"></i></div>
+                <h3 class="font-bold mb-2">安装步骤</h3>
+                <ol class="text-gray-400 text-sm leading-relaxed space-y-1 list-decimal list-inside">
+                    <li>浏览器安装 Tampermonkey 扩展</li>
+                    <li>打开管理面板 → 新建脚本</li>
+                    <li>粘贴脚本内容并保存</li>
+                    <li>访问内部审批流程系统自动生效</li>
+                </ol>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-sky-400 text-xl mb-3"><i class="fas fa-info-circle"></i></div>
+                <h3 class="font-bold mb-2">注意事项</h3>
+                <ul class="text-gray-400 text-sm leading-relaxed space-y-1">
+                    <li>• 依赖浏览器登录态（Cookie）</li>
+                    <li>• 每次只抓取前 100 条流程</li>
+                    <li>• 仅在顶层窗口运行，iframe 内自动跳过</li>
+                    <li>• 刷新页面可重新加载最新数据</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 更新日志 -->
+        <h2 class="section-title">📝 迭代历程</h2>
+        <div class="space-y-0 pl-2">
+            <div class="timeline-item">
+                <span class="text-blue-400 font-bold text-sm">v1.4 · 2026-01</span>
+                <p class="text-gray-300 mt-1 text-sm">新增催办功能；优化双接口数据去重合并逻辑；完善等待时长显示规则</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-blue-400 font-bold text-sm">v1.2 · 2025-12</span>
+                <p class="text-gray-300 mt-1 text-sm">「我的流程」面板上线；审批日志异步加载（上步完成人/时间）；阻塞分布 Top 10 统计</p>
+            </div>
+            <div class="timeline-item" style="border-left-color: transparent;">
+                <span class="text-blue-400 font-bold text-sm">v1.0 · 2025-11</span>
+                <p class="text-gray-300 mt-1 text-sm">项目启动：「待我审批」面板、等待时长计算、悬浮按钮注入核心功能完成</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布控制管理系统 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #f59e0b;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(245,158,11,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .timeline-item { border-left: 2px solid #1e293b; padding-left: 1.5rem; position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; }
+        .check { color: #f59e0b; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-amber-400 hover:text-amber-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-amber-900/60 border border-amber-500/40 text-amber-300">Electron</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">Node.js</span>
+                <span class="tag bg-rose-900/60 border border-rose-500/40 text-rose-300">node-ssh</span>
+                <span class="tag bg-slate-700/60 border border-slate-500/40 text-slate-300">JSON 持久化</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">
+                    <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">发布控制管理系统</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                面向金融证券运维团队打造的 Windows 端发布流程可视化管理工具。在不改动现有发布脚本的前提下，通过 SSH 调度现有命令，将原有 CLI 交互升级为可视化控制台，支持生产/预发布双环境切换，完整记录每次发布过程，让运维发布有据可查、操作可回溯。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">平台：Windows &nbsp;|&nbsp; 框架：Electron v28 &nbsp;|&nbsp; 最后更新：2026-05</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-rocket text-2xl text-amber-400 mb-2"></i>
+                <p class="text-sm font-semibold">发布控制</p>
+                <p class="text-xs text-gray-500 mt-1">可视化 · 实时日志</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-history text-2xl text-orange-400 mb-2"></i>
+                <p class="text-sm font-semibold">发布历史</p>
+                <p class="text-xs text-gray-500 mt-1">记录 · 筛选</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-cubes text-2xl text-yellow-400 mb-2"></i>
+                <p class="text-sm font-semibold">模块清单</p>
+                <p class="text-xs text-gray-500 mt-1">配置解析 · 可视化</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-server text-2xl text-rose-400 mb-2"></i>
+                <p class="text-sm font-semibold">服务清单</p>
+                <p class="text-xs text-gray-500 mt-1">服务器 · SSH</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-tag text-2xl text-purple-400 mb-2"></i>
+                <p class="text-sm font-semibold">注册版本</p>
+                <p class="text-xs text-gray-500 mt-1">版本日志 · 查询</p>
+            </div>
+        </div>
+
+        <!-- 发布控制 -->
+        <h2 class="section-title">🚀 发布控制</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">核心功能模块，通过 SSH 调度服务器现有发布脚本，将命令行操作转化为可视化流程管理。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>双环境切换：</strong>支持生产（pro）/ 预发布（pre）环境一键切换，任务清单随环境独立维护</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>可视化任务清单：</strong>支持单条添加、批量粘贴命令行批量导入，自动解析 req / op / 服务名等字段</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>发布 & 回滚：</strong>每条任务可独立执行发布或回滚操作，对应调用 <code class="text-amber-300 text-xs bg-slate-800 px-1 rounded">wzq_release_control.py -release / -roll</code></li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>全部发布（串行）：</strong>一键串行执行清单内所有待发布任务，任一任务失败立即中止，保障发布原子性</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>实时日志输出：</strong>发布过程逐行实时推送到终端日志面板，支持查看详细服务端日志文件</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>任务状态追踪：</strong>每条任务独立展示执行状态（待发布 / 执行中 / 成功 / 失败），耗时精确到秒</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>互斥锁保护：</strong>任务执行期间禁止重复触发，防止并发冲突导致发布异常</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>企业微信推送：</strong>发布完成或失败后自动推送 Webhook 通知，包含任务详情与执行结果</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>密码安全：</strong>SSH 密码支持明文/密文查看切换，本地 JSON 加密存储</li>
+            </ul>
+        </div>
+
+        <!-- 发布历史 -->
+        <h2 class="section-title">📋 发布历史</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">独立存储每次发布任务的完整记录，与当前发布清单数据隔离，清空清单不影响历史数据。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>自动归档：</strong>任务执行完成后自动写入发布历史，包含模块名、环境、状态、耗时、时间戳</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>模块 & 日期筛选：</strong>支持按服务模块名称和发布日期组合筛选，快速定位历史记录</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>终端日志回溯：</strong>每条历史记录可查看当次的终端日志输出详情</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>服务端日志：</strong>可读取服务器上对应的 <code class="text-amber-300 text-xs bg-slate-800 px-1 rounded">work.{server}.log.{date}</code> 日志文件内容</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>数据隔离保障：</strong>清空发布清单操作只清除当前任务列表，历史数据持久保留，不受影响</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>页面自动刷新：</strong>切换到发布历史 Tab 时自动加载最新数据，无需手动刷新</li>
+            </ul>
+        </div>
+
+        <!-- 模块清单 -->
+        <h2 class="section-title">📦 模块清单</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">通过 SSH 读取服务器端配置文件，解析并可视化展示所有服务模块信息，方便运维人员快速查阅。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>配置文件解析：</strong>自动读取并解析 <code class="text-amber-300 text-xs bg-slate-800 px-1 rounded">machine.pre.conf</code> / <code class="text-amber-300 text-xs bg-slate-800 px-1 rounded">machine.pro.conf</code>，提取服务名、主机列表等信息</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>新旧格式兼容：</strong>同时兼容旧版配置格式与新版格式，向下兼容无历史包袱</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>关键字筛选：</strong>支持按服务名称关键字实时过滤，防抖优化避免频繁渲染</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>增量渲染：</strong>列表采用增量更新策略，筛选时仅更新变动节点，避免全量重绘影响性能</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>空状态提示：</strong>无数据或筛选无结果时展示友好的空状态提示，保留页面框架结构</li>
+            </ul>
+        </div>
+
+        <!-- 服务清单 -->
+        <h2 class="section-title">🖥️ 服务清单</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">管理发布相关的服务器连接信息，支持远程读取配置并安全存储。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>服务器信息管理：</strong>维护 IP、端口、账号等 SSH 连接信息，支持增删改查</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>敏感信息保护：</strong>密码字段脱敏显示，页面不明文展示，存储时加密处理</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>远程配置读取：</strong>通过 SSH 连接服务器，实时读取远端配置文件内容，同步到本地</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>批量操作前校验：</strong>执行批量发布任务前自动校验服务器连接状态，连接异常时提示并阻止操作</li>
+            </ul>
+        </div>
+
+        <!-- 注册版本 -->
+        <h2 class="section-title">🏷️ 注册版本</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-2">解析服务器端版本注册日志，以表格形式可视化展示各模块的版本注册历史，方便快速核查。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>日志文件解析：</strong>自动扫描并解析服务器端 <code class="text-amber-300 text-xs bg-slate-800 px-1 rounded">reg.*.log.*</code> 日志文件，提取版本注册记录</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>表格化展示：</strong>以结构化表格呈现版本号、模块名、注册时间、操作单号等关键信息</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>多模块汇总：</strong>一次性汇总所有模块的注册记录，无需逐一 SSH 查看日志文件</li>
+                <li><i class="fas fa-check-circle check mr-2"></i><strong>时间戳兼容：</strong>兼容 ISO 8601 等多种时间格式，确保日志解析不因格式差异失败</li>
+            </ul>
+        </div>
+
+        <!-- 技术架构 -->
+        <h2 class="section-title">🏗️ 技术架构</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-amber-400 text-xl mb-3"><i class="fas fa-desktop"></i></div>
+                <h3 class="font-bold mb-2">前端渲染层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Electron Renderer + 原生 HTML5 / CSS3 / JavaScript，Tab 单页应用架构，无框架依赖，保持 SSH 连接状态不丢失</p>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-orange-400 text-xl mb-3"><i class="fas fa-cogs"></i></div>
+                <h3 class="font-bold mb-2">主进程逻辑层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Node.js + node-ssh，IPC 通信，SSH 连接管理，Promise 串行任务链，互斥锁防死锁设计</p>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-yellow-400 text-xl mb-3"><i class="fas fa-file-alt"></i></div>
+                <h3 class="font-bold mb-2">数据持久化层</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">JSON 文件持久化存储任务详情、发布历史、状态与日志；原子写入防止竞态条件</p>
+            </div>
+        </div>
+
+        <!-- 设计亮点 -->
+        <h2 class="section-title">✨ 设计亮点</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-2xl feature-card">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-lock text-amber-400 text-lg"></i>
+                    <h3 class="font-bold">互斥锁串行执行</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">任务执行期间全局加锁，防止重复触发与并发冲突，确保发布操作的原子性与可预期性。</p>
+            </div>
+            <div class="glass p-5 rounded-2xl feature-card">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-unlink text-amber-400 text-lg"></i>
+                    <h3 class="font-bold">数据完全隔离</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">发布清单与发布历史数据独立存储，清空当前清单不会影响历史记录，确保历史数据永久可查。</p>
+            </div>
+            <div class="glass p-5 rounded-2xl feature-card">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-link text-amber-400 text-lg"></i>
+                    <h3 class="font-bold">单页应用保持连接</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">各功能模块整合为 Tab 单页应用，切换 Tab 不重载页面，SSH 连接状态在会话内持续保持。</p>
+            </div>
+            <div class="glass p-5 rounded-2xl feature-card">
+                <div class="flex items-center gap-3 mb-3">
+                    <i class="fas fa-tachometer-alt text-amber-400 text-lg"></i>
+                    <h3 class="font-bold">增量渲染优化</h3>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">任务列表与模块清单均采用增量 DOM 更新策略，避免 innerHTML 全量重绘导致的性能问题与焦点丢失。</p>
+            </div>
+        </div>
+
+        <!-- 更新日志 -->
+        <h2 class="section-title">📝 迭代历程</h2>
+        <div class="space-y-0 pl-2">
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">2026-05</span>
+                <p class="text-gray-300 mt-1 text-sm">模块清单筛选防抖优化、增量渲染；密码输入框明文查看功能；前端性能优化（分离资源文件、CSS/JS 独立维护）</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">2026-04</span>
+                <p class="text-gray-300 mt-1 text-sm">注册版本页面上线（解析 reg.*.log.* 日志）；企业微信批量发布推送通知；诊断推送缺失排查流程完善</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">2026-03</span>
+                <p class="text-gray-300 mt-1 text-sm">服务清单页面上线；模块清单新旧格式兼容；发布历史服务端日志查看功能；Tab 切换自动刷新发布历史</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">2026-02</span>
+                <p class="text-gray-300 mt-1 text-sm">发布历史模块/日期筛选功能；修复批量发布任务误判失败问题；全部发布从并发改为串行执行</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">2026-01</span>
+                <p class="text-gray-300 mt-1 text-sm">发布历史功能上线；模块清单页面上线；互斥锁防死锁设计；JSON 写入竞态条件修复；批量命令正则兼容负数编号</p>
+            </div>
+            <div class="timeline-item" style="border-left-color: transparent;">
+                <span class="text-amber-400 font-bold text-sm">2025-12</span>
+                <p class="text-gray-300 mt-1 text-sm">项目启动：发布控制核心功能完成，支持单条/批量发布与回滚，SSH 远程执行，实时日志输出，JSON 持久化存储</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding on Electron</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务看板 Task Board | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #06b6d4;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(6,182,212,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-cyan-400 hover:text-cyan-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-cyan-900/60 border border-cyan-500/40 text-cyan-300">Python</span>
+                <span class="tag bg-sky-900/60 border border-sky-500/40 text-sky-300">CGI</span>
+                <span class="tag bg-blue-900/60 border border-blue-500/40 text-blue-300">Gemini AI</span>
+                <span class="tag bg-indigo-900/60 border border-indigo-500/40 text-indigo-300">企业微信</span>
+                <span class="tag bg-purple-900/60 border border-purple-500/40 text-purple-300">
+                    <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">任务看板 Task Board</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                面向个人运维日常工作管理打造的轻量级看板工具。三栏式任务流转（待办/进行中/已完成），内置 AI 驱动的日报周报自动生成，以及 Gemini + 企业微信 Webhook 的智能推送，让工作进展实时可见、汇报高效。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">技术栈：Python CGI &nbsp;|&nbsp; 数据存储：JSON 文件 &nbsp;|&nbsp; 平台：Apache Web Server</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-columns text-2xl text-cyan-400 mb-2"></i>
+                <p class="text-sm font-semibold">看板管理</p>
+                <p class="text-xs text-gray-500 mt-1">三栏 · 拖拽 · 置顶</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-file-alt text-2xl text-sky-400 mb-2"></i>
+                <p class="text-sm font-semibold">日报生成</p>
+                <p class="text-xs text-gray-500 mt-1">今日总结 · 明日计划</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-chart-bar text-2xl text-blue-400 mb-2"></i>
+                <p class="text-sm font-semibold">周报生成</p>
+                <p class="text-xs text-gray-500 mt-1">多周回溯 · 历史归档</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-robot text-2xl text-indigo-400 mb-2"></i>
+                <p class="text-sm font-semibold">AI 推送</p>
+                <p class="text-xs text-gray-500 mt-1">Gemini · 企业微信</p>
+            </div>
+        </div>
+
+        <!-- 看板管理 -->
+        <h2 class="section-title">📋 三栏看板管理</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                采用经典三栏看板布局，任务可通过拖拽在「待办 → 进行中 → 已完成」之间流转，直观反映工作状态。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-orange-500/20">
+                    <div class="text-orange-400 font-semibold mb-2">📝 待办事项</div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• 任务池 / 明日工作计划</li>
+                        <li>• 按项目、类型筛选</li>
+                        <li>• 支持优先级/工时/进度/截止日期排序</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-blue-500/20">
+                    <div class="text-blue-400 font-semibold mb-2">🚀 进行中</div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• 今日工作总结来源</li>
+                        <li>• 支持📌置顶，控制日报顺序</li>
+                        <li>• 显示「今日推进事项」字段</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4 border border-emerald-500/20">
+                    <div class="text-emerald-400 font-semibold mb-2">✅ 已完成</div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• 可折叠区域，保持界面简洁</li>
+                        <li>• 记录完成时间，用于周报统计</li>
+                        <li>• 支持归档到独立 JSON 文件</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 space-y-2 text-sm text-gray-400">
+                <p><i class="fas fa-check text-cyan-400 mr-2"></i>每个任务包含：标题、类型、所属项目、描述、优先级（高/中/低）、预计工时、实际工时、完成进度、截止日期、相关链接、今日推进事项</p>
+                <p><i class="fas fa-check text-cyan-400 mr-2"></i>完整的活动日志记录：每次字段变更均自动追加到 activity_log，支持追溯</p>
+                <p><i class="fas fa-check text-cyan-400 mr-2"></i>文件锁 + 原子写入：防止并发写入导致数据损坏</p>
+            </div>
+        </div>
+
+        <!-- 日报生成 -->
+        <h2 class="section-title">📝 日报自动生成</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                页面右侧实时显示「今日工作总结」和「明日工作计划」，基于当前看板数据自动生成，一键复制即可用于汇报。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-sky-400 font-semibold mb-3">今日工作总结（进行中）</div>
+                    <div class="font-mono text-xs text-gray-400 bg-slate-900/60 p-3 rounded-lg">
+                        <p class="text-gray-300">今日工作总结(进行中任务)</p>
+                        <p>1. 【开发任务】优化告警看板加载速度（沟通等待升级F5）。2.5h 60%</p>
+                        <p>2. 【运维任务】数据库容灾演练方案制定。1h 30%</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">• 进行中任务按置顶顺序排列<br>• 格式：序号 + 类型 + 标题 + 今日推进 + 工时 + 进度</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-emerald-400 font-semibold mb-3">明日工作计划（待办 + 进行中）</div>
+                    <div class="font-mono text-xs text-gray-400 bg-slate-900/60 p-3 rounded-lg">
+                        <p class="text-gray-300">明日工作计划</p>
+                        <p>1. 【开发任务】优化告警看板加载速度(进度:60%)</p>
+                        <p>2. 【运维任务】数据库容灾演练方案制定(进度:30%)</p>
+                        <p>3. 【研究任务】评估 Grafana 替代方案(进度:0%)</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">• 排除已完成和进度 100% 的任务<br>• 自动包含所有未完成工作项</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 周报生成 -->
+        <h2 class="section-title">📊 周报生成</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                支持查看本周、上周、前 2-4 周的完成任务，按任务类型自动分组，生成标准化周报文本，可补充说明后一键复制。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-cyan-900/60 border border-cyan-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-history text-cyan-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">多周回溯</p>
+                            <p class="text-xs text-gray-400 mt-1">支持查询本周/上周/前2-4周，跨周统计不遗漏</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-sky-900/60 border border-sky-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-layer-group text-sky-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">按类型分组</p>
+                            <p class="text-xs text-gray-400 mt-1">按【开发任务】【运维任务】等类型自动分类汇总</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-900/60 border border-blue-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fas fa-archive text-blue-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold">历史归档</p>
+                            <p class="text-xs text-gray-400 mt-1">30/60/90/180 天前完成的任务可归档至独立 JSON 文件，保持主数据精简</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <div class="text-blue-400 font-semibold mb-3 text-sm">周报示例输出</div>
+                    <div class="font-mono text-xs text-gray-400 bg-slate-900/60 p-3 rounded-lg">
+                        <p class="text-gray-300">本周工作总结</p>
+                        <br>
+                        <p class="text-gray-300">一、完成任务概览（共5项）</p>
+                        <br>
+                        <p class="text-yellow-300">【开发任务】</p>
+                        <p>- 优化 Zabbix 告警看板加载速度</p>
+                        <p>- H5 打包工具多环境支持改造</p>
+                        <br>
+                        <p class="text-blue-300">【运维任务】</p>
+                        <p>- 数据库跨机房容灾演练</p>
+                        <p>- NTP 服务器批量对时</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI 推送 -->
+        <h2 class="section-title">🤖 AI 智能推送</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-300 leading-relaxed">
+                点击「AI 推送」，系统将进行中任务和优先级最高的待办任务发送给 Gemini 分析，AI 生成 Markdown 格式的工作播报后，通过企业微信 Webhook 推送到指定群。
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 items-start">
+                <div class="flex-1 space-y-3">
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <div class="text-indigo-400 font-semibold mb-2 text-sm">工作流程</div>
+                        <ol class="text-sm text-gray-400 space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 font-bold">1.</span>提取进行中任务 + Top5 待办（按优先级+截止日期排序）</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 font-bold">2.</span>精简任务数据（标题/类型/进度/剩余工时/今日推进）</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 font-bold">3.</span>携带自定义 Prompt 调用 Gemini API（走代理）</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 font-bold">4.</span>AI 生成结构化 Markdown 播报文本</li>
+                            <li class="flex items-start gap-2"><span class="text-cyan-400 font-bold">5.</span>直连企业微信 Webhook 推送（不走代理）</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-slate-800/60 rounded-xl p-4">
+                        <div class="text-indigo-400 font-semibold mb-2 text-sm">系统配置项</div>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li><i class="fas fa-key text-yellow-400 mr-2"></i>Gemini API Key</li>
+                            <li><i class="fas fa-network-wired text-blue-400 mr-2"></i>代理地址（用于访问 Gemini）</li>
+                            <li><i class="fas fa-link text-emerald-400 mr-2"></i>企业微信 Webhook URL</li>
+                            <li><i class="fas fa-edit text-purple-400 mr-2"></i>自定义 AI Prompt 模板</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-3">配置保存于独立 config.json 文件，与任务数据分离</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据可靠性 -->
+        <h2 class="section-title">🔒 数据可靠性设计</h2>
+        <div class="glass p-6 rounded-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <i class="fas fa-lock text-emerald-400 text-xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">文件锁机制</h4>
+                    <p class="text-xs text-gray-400">基于锁文件实现写入互斥，支持死锁检测（10s 自动过期强制释放），防止并发写入数据损坏</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <i class="fas fa-exchange-alt text-sky-400 text-xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">原子写入</h4>
+                    <p class="text-xs text-gray-400">先写临时文件，再 os.replace() 原子替换正式文件，写入中断不会产生损坏的数据文件</p>
+                </div>
+                <div class="bg-slate-800/60 rounded-xl p-4">
+                    <i class="fas fa-history text-indigo-400 text-xl mb-3"></i>
+                    <h4 class="font-semibold mb-2">活动日志</h4>
+                    <p class="text-xs text-gray-400">每个任务维护 activity_log 数组，记录每次字段变更（时间戳/字段名/旧值/新值），完整追溯任务历史</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 导出功能 -->
+        <h2 class="section-title">📤 数据导出</h2>
+        <div class="glass p-6 rounded-2xl space-y-3">
+            <p class="text-gray-300 leading-relaxed">支持将任务数据导出为标准 JSON 文件，适合直接发给 AI 工具进行深度分析或外部系统集成。</p>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="bg-slate-700/60 border border-slate-500/30 text-slate-300 px-3 py-1.5 rounded-lg text-sm">全部任务（含已完成）</span>
+                <span class="bg-slate-700/60 border border-slate-500/30 text-slate-300 px-3 py-1.5 rounded-lg text-sm">活跃任务（待办 + 进行中）</span>
+                <span class="bg-slate-700/60 border border-slate-500/30 text-slate-300 px-3 py-1.5 rounded-lg text-sm">仅待办任务</span>
+                <span class="bg-slate-700/60 border border-slate-500/30 text-slate-300 px-3 py-1.5 rounded-lg text-sm">仅进行中任务</span>
+                <span class="bg-slate-700/60 border border-slate-500/30 text-slate-300 px-3 py-1.5 rounded-lg text-sm">仅已完成任务</span>
+            </div>
+            <p class="text-xs text-gray-500">导出字段包含：标题、类型、项目、描述、状态、进度、工时、优先级、截止日期、活动日志等全部字段</p>
+        </div>
+
+    </main>
+
+    <footer class="py-10 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科管填表助手 | 功能介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .section-title {
+            border-left: 4px solid #f59e0b;
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .feature-card { transition: all 0.25s ease; }
+        .feature-card:hover { transform: translateY(-2px); border-color: rgba(245,158,11,0.4); }
+        .tag { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.72rem; }
+        .timeline-item { border-left: 2px solid #1e293b; padding-left: 1.5rem; position: relative; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; }
+        .market-row { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .market-row:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="p-6">
+        <a href="../andytools.html" class="text-amber-400 hover:text-amber-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>返回作品集
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <!-- Hero -->
+        <div class="mb-10">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="tag bg-amber-900/60 border border-amber-500/40 text-amber-300">Tampermonkey</span>
+                <span class="tag bg-yellow-900/60 border border-yellow-500/40 text-yellow-300">JavaScript</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">GM_xmlhttpRequest</span>
+                <span class="tag bg-orange-900/60 border border-orange-500/40 text-orange-300">
+                    <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">科管填表助手</h1>
+            <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                注入采购管理系统的 IT 费用填报效率工具。针对行情数据授权费用类 IT 采购结果确认表，实现深沪 LEVEL2、港股、美股、恒指、芝加哥等多市场费用的一键勾选或粘贴智能填报，自动匹配供应商与项目字段，同步提醒未完成的 IT 类电子报销单。
+            </p>
+            <p class="text-gray-500 text-sm mt-3">版本：v4.8 &nbsp;|&nbsp; 适用系统：内部采购管理系统 &nbsp;|&nbsp; 最后更新：2026-04</p>
+        </div>
+
+        <!-- 功能模块概览 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-2">
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-check-square text-2xl text-amber-400 mb-2"></i>
+                <p class="text-sm font-semibold">勾选填报</p>
+                <p class="text-xs text-gray-500 mt-1">LEVEL2 · 一键</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-paste text-2xl text-yellow-400 mb-2"></i>
+                <p class="text-sm font-semibold">粘贴填报</p>
+                <p class="text-xs text-gray-500 mt-1">多市场 · 智能解析</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-magic text-2xl text-orange-400 mb-2"></i>
+                <p class="text-sm font-semibold">智能匹配</p>
+                <p class="text-xs text-gray-500 mt-1">供应商 · 项目</p>
+            </div>
+            <div class="glass p-4 rounded-2xl text-center feature-card">
+                <i class="fas fa-exclamation-triangle text-2xl text-red-400 mb-2"></i>
+                <p class="text-sm font-semibold">报销提醒</p>
+                <p class="text-xs text-gray-500 mt-1">未完成 · 自动检测</p>
+            </div>
+        </div>
+
+        <!-- 勾选填报 -->
+        <h2 class="section-title">☑️ 勾选填报模式</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">适用于深圳/上海 LEVEL2 行情授权费的月度固定填报场景。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>可视化勾选：</strong>在表单页面注入深圳 LEVEL2 / 上海 LEVEL2 勾选框，点击即可激活对应填报模式</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>自动填入：</strong>勾选后自动填充对应的供应商（深圳证券信息有限公司 / 上证所信息网络有限公司）和项目名称</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>独立模式：</strong>勾选模式与粘贴填报模式相互独立，不会互相干扰</li>
+            </ul>
+        </div>
+
+        <!-- 粘贴填报 -->
+        <h2 class="section-title">📋 粘贴填报模式</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">适用于港股、美股、恒指、芝加哥等需要从账单或邮件中复制数据的场景。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>智能解析：</strong>粘贴包含市场关键词的文本后，自动识别涉及哪些市场的费用，按市场拆分处理</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>多市场支持：</strong>覆盖港股（HKEx）、美股/新加坡/国际指数/恒生指数/富时指数、芝加哥交易所等主流行情数据</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>排除规则：</strong>内置关键词排除逻辑，如「恒生指数授权费」属于国际类项目，不会误判为港股类，确保分类准确</li>
+            </ul>
+        </div>
+
+        <!-- 智能匹配数据库 -->
+        <h2 class="section-title">🗃️ 市场-供应商-项目数据库</h2>
+        <div class="glass p-6 rounded-2xl">
+            <p class="text-gray-400 text-sm mb-4">内置完整的行情费用对应关系表，填报时自动匹配，无需手动查找。</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-gray-400 text-xs border-b border-gray-700">
+                            <th class="text-left py-2 pr-4">市场类型</th>
+                            <th class="text-left py-2 pr-4">供应商</th>
+                            <th class="text-left py-2">项目名称</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="market-row">
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">深圳 LEVEL2</span></td>
+                            <td class="py-2.5 pr-4">深圳证券信息有限公司</td>
+                            <td class="py-2.5">深圳level2行情授权费</td>
+                        </tr>
+                        <tr class="market-row">
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">上海 LEVEL2</span></td>
+                            <td class="py-2.5 pr-4">上证所信息网络有限公司</td>
+                            <td class="py-2.5">上海level2行情授权费</td>
+                        </tr>
+                        <tr class="market-row">
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">港股</span></td>
+                            <td class="py-2.5 pr-4">香港交易所</td>
+                            <td class="py-2.5">港股行情相关服务</td>
+                        </tr>
+                        <tr class="market-row">
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">恒生指数授权费</span></td>
+                            <td class="py-2.5 pr-4 text-gray-400">（国际/指数类）</td>
+                            <td class="py-2.5">美股、新加坡、国际指数授权费、富时</td>
+                        </tr>
+                        <tr class="market-row">
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">美股/新加坡/富时</span></td>
+                            <td class="py-2.5 pr-4 text-gray-400">（对应供应商）</td>
+                            <td class="py-2.5">美股、新加坡、国际指数授权费、富时</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 pr-4"><span class="text-amber-400">芝加哥交易所</span></td>
+                            <td class="py-2.5 pr-4 text-gray-400">（对应供应商）</td>
+                            <td class="py-2.5">芝加哥相关数据授权费</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 报销提醒 -->
+        <h2 class="section-title">⚠️ 未完成报销单提醒</h2>
+        <div class="glass p-6 rounded-2xl space-y-4">
+            <p class="text-gray-400 text-sm mb-3">访问采购管理系统时自动在后台检测，有未完成单据则弹窗提醒。</p>
+            <ul class="space-y-3 text-sm md:text-base text-gray-300">
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>自动检测：</strong>登录采购系统时调用 IT 类电子报销单查询接口，自动过滤已废弃的历史流程编号</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>弹窗提醒：</strong>若存在有效未完成单据，显示醒目提醒，列出待处理的报销单标题与流程编号</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>废弃排除：</strong>内置完整的历史废弃流程编号列表，避免旧数据误触发提醒，确保提醒信息准确可信</li>
+                <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>快速跳转：</strong>点击提醒中的单据标题可直接跳转到对应流程详情页</li>
+            </ul>
+        </div>
+
+        <!-- 安装使用 -->
+        <h2 class="section-title">🚀 安装与使用</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-amber-400 text-xl mb-3"><i class="fas fa-download"></i></div>
+                <h3 class="font-bold mb-2">安装步骤</h3>
+                <ol class="text-gray-400 text-sm leading-relaxed space-y-1 list-decimal list-inside">
+                    <li>浏览器安装 Tampermonkey 扩展</li>
+                    <li>打开管理面板 → 新建脚本</li>
+                    <li>粘贴脚本内容并保存</li>
+                    <li>访问内部采购管理系统自动生效</li>
+                </ol>
+            </div>
+            <div class="glass p-5 rounded-2xl">
+                <div class="text-yellow-400 text-xl mb-3"><i class="fas fa-info-circle"></i></div>
+                <h3 class="font-bold mb-2">适用场景</h3>
+                <ul class="text-gray-400 text-sm leading-relaxed space-y-1">
+                    <li>• 每月行情数据授权费用 IT 采购确认</li>
+                    <li>• 港股/美股等多市场费用分批录入</li>
+                    <li>• 月底未完成报销单清理提醒</li>
+                    <li>• 依赖浏览器 Cookie 登录态</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 更新日志 -->
+        <h2 class="section-title">📝 迭代历程</h2>
+        <div class="space-y-0 pl-2">
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">v4.8 · 2026-04</span>
+                <p class="text-gray-300 mt-1 text-sm">优化粘贴填报的多市场拆分逻辑；完善废弃流程编号过滤列表；报销提醒弹窗交互优化</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">v4.5 · 2026-03</span>
+                <p class="text-gray-300 mt-1 text-sm">新增未完成 IT 类电子报销单提醒功能；芝加哥数据粘贴填报支持上线</p>
+            </div>
+            <div class="timeline-item">
+                <span class="text-amber-400 font-bold text-sm">v4.0 · 2026-01</span>
+                <p class="text-gray-300 mt-1 text-sm">港股/美股/恒指多市场粘贴填报；市场-供应商-项目数据库建立；排除规则完善</p>
+            </div>
+            <div class="timeline-item" style="border-left-color: transparent;">
+                <span class="text-amber-400 font-bold text-sm">v1.0 · 2025-11</span>
+                <p class="text-gray-300 mt-1 text-sm">项目启动：深圳/上海 LEVEL2 勾选填报、供应商自动匹配核心功能完成</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 text-center px-6">
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding</p>
+    </footer>
+
+</body>
+</html>

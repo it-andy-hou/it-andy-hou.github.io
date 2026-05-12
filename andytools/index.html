@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andy Hou - 十年金融证券运维专家，Vibe Coding 驱动的 AIOps 开发者，个人作品集">
+    <title>Andy Hou | Vibe Coding 作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', 'Microsoft YaHei', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .hero-gradient { background: radial-gradient(ellipse at 50% 40%, #1e3a8a 0%, #0f172a 65%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.5); }
+        .qr-popup { display: none; }
+        .qr-popup.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 glass px-4 md:px-6 py-3 flex justify-between items-center">
+        <div class="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+            ANDY HOU
+        </div>
+        <div class="flex items-center space-x-4 md:space-x-5">
+            <!-- 小红书 -->
+            <div class="relative">
+                <button onclick="toggleQR('xhs')" class="text-gray-300 hover:text-red-400 transition text-lg" title="小红书">
+                    <i class="fas fa-book-open"></i>
+                </button>
+                <div id="qr-xhs" class="qr-popup absolute right-0 top-full mt-2 w-44 md:w-56 bg-white rounded-xl shadow-xl z-50 p-2">
+                    <img src="imgs/xiaohongshu.png" alt="小红书二维码" class="w-full rounded-lg">
+                    <p class="text-xs text-gray-500 text-center mt-1">扫码关注小红书</p>
+                </div>
+            </div>
+            <!-- 抖音 -->
+            <div class="relative">
+                <button onclick="toggleQR('dy')" class="text-gray-300 hover:text-pink-400 transition text-lg" title="抖音">
+                    <i class="fab fa-tiktok"></i>
+                </button>
+                <div id="qr-dy" class="qr-popup absolute right-0 top-full mt-2 w-44 md:w-56 bg-white rounded-xl shadow-xl z-50 p-2">
+                    <img src="imgs/douyin.jpg" alt="抖音二维码" class="w-full rounded-lg">
+                    <p class="text-xs text-gray-500 text-center mt-1">扫码关注抖音</p>
+                </div>
+            </div>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E7%9A%84%E5%AE%89%E8%BF%AA" target="_blank" class="text-gray-300 hover:text-red-500 transition text-lg" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <!-- 个人博客 -->
+            <a href="https://hi-andy.com" target="_blank" class="text-gray-300 hover:text-blue-400 transition text-lg" title="个人博客">
+                <i class="fas fa-globe"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero 区块 -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 hero-gradient pt-16">
+        <div class="inline-flex items-center space-x-2 bg-blue-900/50 border border-blue-500/30 rounded-full px-4 py-1.5 mb-8 text-sm text-blue-300">
+            <i class="fas fa-microchip text-xs"></i>
+            <span>Vibe Coding 驱动 · 从想法到产品</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+            全栈运维 <span class="text-blue-400">× AI Native</span> 开发
+        </h1>
+        <p class="text-gray-400 text-base md:text-xl max-w-2xl mb-10 leading-relaxed">
+            十年金融证券核心系统运维，借助 Vibe Coding<br class="hidden md:block">
+            将深厚的行业经验转化为真实可用的产品。
+        </p>
+        <a href="#projects" class="px-8 py-3 rounded-lg bg-blue-600 font-semibold hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30 transition">
+            查看作品集
+        </a>
+    </section>
+
+    <!-- 个人能力简介 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="glass p-6 rounded-2xl card-hover">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-landmark"></i></div>
+                <h3 class="font-bold text-base mb-2">十年金融运维</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">深耕证券行业核心系统，任职国金证券，负责佣金宝、腾讯自选股等后端系统稳定运行，精通大型分布式架构容量规划与保障。</p>
+            </div>
+            <div class="glass p-6 rounded-2xl card-hover">
+                <div class="text-emerald-400 text-2xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="font-bold text-base mb-2">复杂系统实战</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">主导国密系统升级改造、信创化迁移及跨机房数据库容灾演练，具备极强的线上应急处置与故障排查能力。</p>
+            </div>
+            <div class="glass p-6 rounded-2xl card-hover">
+                <div class="text-purple-400 text-2xl mb-4"><i class="fas fa-robot"></i></div>
+                <h3 class="font-bold text-base mb-2">AIOps & 全栈开发</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">主导开发运维辅助智能体、万象匣等自动化平台，借助 AI 工具高效产出，推动从传统运维向 AIOps 智能化转型。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="projects" class="pb-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center">
+            <span class="w-2 h-7 bg-blue-500 mr-4 rounded-full"></span>
+            作品集
+        </h2>
+
+        <div class="space-y-8">
+
+            <!-- 项目一：运维辅助智能体 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（左边） -->
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/ai-ops.png" alt="运维辅助智能体截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-purple-400 font-mono text-sm">Go / Gin / SQLite / AI</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">运维辅助智能体</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        面向金融证券核心运维场景打造的全栈 AIOps 平台。集 CMDB 资产管理、AI 智能诊断、NTP 批量对时、批量 Ping 检测等能力于一体，驱动传统运维向智能化转型。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>CMDB 资产管理：</strong>涵盖 16 种资产类型，Oracle 定时同步</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>AI 智能诊断：</strong>SSH 连接服务器，AI 辅助分析定位故障根因</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>批量运维工具：</strong>NTP 对时、Ping 检测、IP 跨表批量查询</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>容灾链路监控：</strong>DSG / 英方链路状态实时查看</li>
+                    </ul>
+                    <a href="projects/ops-pingtai.html" class="inline-block px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目二：万象匣 SSH 运维工具箱 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（右边，交替布局） -->
+                <div class="relative group order-1 lg:order-2">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/wanxiang.png" alt="万象匣 SSH 运维工具箱截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2 lg:order-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-emerald-400 font-mono text-sm">Electron / Node.js / SQLite</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">万象匣 SSH 运维工具箱</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        面向金融证券核心系统运维场景打造的 Windows 桌面应用，将传统 CGI 运维工具重构为现代化 Electron 客户端。支持千台级服务器批量管理，覆盖脚本执行、文件分发、工程编排全流程。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>主机管理：</strong>Excel 批量导入、智能筛选、批量 Ping/SSH 连接探测</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>批量执行：</strong>脚本库管理 + 临时命令，并发执行，实时进度与日志</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>文件上传：</strong>SCP 批量分发，支持备份覆盖策略，目标路径安全校验</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>工程任务：</strong>多步骤 DAG 编排，失败即停，企业微信通知推送</li>
+                    </ul>
+                    <a href="projects/wanxiang-box.html" class="inline-block px-6 py-2 rounded-full border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目三：Zabbix 告警看板 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（左边） -->
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-600 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/zabbix.png" alt="Zabbix 告警看板截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-rose-400 font-mono text-sm">Python / CGI / Zabbix API</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Zabbix 告警看板</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        基于 Zabbix API 打造的金融级实时告警监控看板。聚焦关注主机组的活跃告警，提供灾难/严重/警告等多级别统计汇总，并发查询大规模主机群，是日常值班巡检的核心工具。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-rose-500 mr-2"></i><strong>实时告警：</strong>调用 Zabbix API 展示活跃触发器，自动刷新</li>
+                        <li><i class="fas fa-check-circle text-rose-500 mr-2"></i><strong>多级统计：</strong>灾难/严重/一般严重/警告/信息五级分类汇总</li>
+                        <li><i class="fas fa-check-circle text-rose-500 mr-2"></i><strong>主机组聚焦：</strong>按业务组过滤，并发查询提升大规模巡检效率</li>
+                        <li><i class="fas fa-check-circle text-rose-500 mr-2"></i><strong>维护计划：</strong>标记维护中主机，避免告警误判，支持维护窗口管理</li>
+                    </ul>
+                    <a href="projects/zabbix-alert-board.html" class="inline-block px-6 py-2 rounded-full border border-rose-500 text-rose-400 hover:bg-rose-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目四：发布控制管理系统 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（右边，交替布局） -->
+                <div class="relative group order-1 lg:order-2">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/wzq.png" alt="发布控制管理系统截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2 lg:order-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-amber-400 font-mono text-sm">Electron / Node.js / SSH</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">发布控制管理系统</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        面向金融证券运维团队打造的 Windows 端发布流程可视化管理工具。支持生产/预发布双环境切换，通过 SSH 远程执行发布任务，实时输出日志，完整记录每次发布过程，让运维发布有据可查。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>发布控制：</strong>可视化任务管理，SSH 远程执行，实时日志输出，遇错即停</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>发布历史：</strong>完整记录每次发布详情，支持模块与日期筛选</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>模块清单：</strong>解析配置文件，可视化展示所有服务模块信息</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>服务清单 & 注册版本：</strong>服务器信息管理与版本注册记录查询</li>
+                    </ul>
+                    <a href="projects/release-control.html" class="inline-block px-6 py-2 rounded-full border border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目五：DNSPod 域名解析管理工具 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（左边） -->
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/dnspod-tools-2026-02-10_225241.png" alt="DNSPod 域名解析管理工具截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-blue-400 font-mono text-sm">Python / Tkinter / API</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">DNSPod 域名解析管理工具</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        基于腾讯云官方 API 开发的桌面管理工具，彻底解决 Web 端解析管理的繁琐流程。支持多账户快速切换、解析记录实时检索与批量运维，为专业运维人员打造。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>多账户管理：</strong>支持配置多个 SecretID/Key 快速切换</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>智能搜索：</strong>支持主机记录、记录值、备注的模糊匹配</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>高效批量：</strong>一键批量启用或禁用解析记录</li>
+                        <li><i class="fas fa-check-circle text-emerald-500 mr-2"></i><strong>数据安全：</strong>本地配置加密存储，直连官方 API</li>
+                    </ul>
+                    <a href="projects/dnspod-tool.html" class="inline-block px-6 py-2 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目六：任务看板 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（右边，交替布局） -->
+                <div class="relative group order-1 lg:order-2">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-sky-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/task.png" alt="任务看板 Task Board 截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2 lg:order-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-cyan-400 font-mono text-sm">Python / CGI / Gemini AI</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">任务看板 Task Board</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        面向个人运维日常工作管理打造的轻量看板工具。三栏式任务流转（待办/进行中/已完成），内置 AI 驱动的日报周报自动生成，以及 Gemini + 企业微信 Webhook 的智能推送，让工作进展实时可见。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-cyan-500 mr-2"></i><strong>看板管理：</strong>三栏拖拽流转，优先级、工时、截止日期全覆盖</li>
+                        <li><i class="fas fa-check-circle text-cyan-500 mr-2"></i><strong>日报生成：</strong>自动汇总进行中任务，一键复制今日总结 & 明日计划</li>
+                        <li><i class="fas fa-check-circle text-cyan-500 mr-2"></i><strong>周报生成：</strong>按周汇总完成任务，支持多周回溯和历史归档</li>
+                        <li><i class="fas fa-check-circle text-cyan-500 mr-2"></i><strong>AI 推送：</strong>调用 Gemini 分析任务，Markdown 格式推送至企业微信群</li>
+                    </ul>
+                    <a href="projects/task-board.html" class="inline-block px-6 py-2 rounded-full border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 项目七：H5 多环境打包工具 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 占位图（左边） -->
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/h5.png" alt="H5 多环境打包工具截图" class="w-full aspect-video object-cover">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-violet-400 font-mono text-sm">Python / CGI / Shell</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">H5 多环境打包工具</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        面向 H5 应用发布流程打造的多环境打包平台。支持仿真/0915测试/灰度/生产四套环境一键切换，生产环境设有二次确认保护，打包完成自动推送企业微信，将繁琐的手动打包流程标准化、可追溯化。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-violet-500 mr-2"></i><strong>多环境支持：</strong>FZ/0915/PRE/SC 四套环境可视化选择，一键触发</li>
+                        <li><i class="fas fa-check-circle text-violet-500 mr-2"></i><strong>生产保护：</strong>生产环境强制二次确认弹窗，防止误操作</li>
+                        <li><i class="fas fa-check-circle text-violet-500 mr-2"></i><strong>部署状态：</strong>实时展示最近生产部署记录，含执行人/Git版本/JIRA</li>
+                        <li><i class="fas fa-check-circle text-violet-500 mr-2"></i><strong>微信通知：</strong>打包完成自动推送佣金宝出包小分队企业微信群</li>
+                    </ul>
+                    <a href="projects/h5-package.html" class="inline-block px-6 py-2 rounded-full border border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 移动端应用 -->
+    <section class="pb-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center">
+            <span class="w-2 h-7 bg-green-500 mr-4 rounded-full"></span>
+            移动端应用
+        </h2>
+
+        <div class="space-y-8">
+
+            <!-- Net-Probe · 灵犀 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <!-- 截图（左边） -->
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="imgs/net-probe.png" alt="Net-Probe 灵犀截图" class="w-full aspect-video object-cover object-top">
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-green-400 font-mono text-sm">Flutter / iOS / Android</span>
+                        <span class="text-xs bg-purple-900/60 border border-purple-500/40 text-purple-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-microchip text-xs mr-1"></i>Vibe Coding
+                        </span>
+                        <span class="text-xs bg-yellow-900/60 border border-yellow-500/40 text-yellow-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-code-branch text-xs mr-1"></i>开发中
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Net-Probe · 灵犀</h3>
+                    <p class="text-gray-400 mb-3 leading-relaxed text-sm md:text-base">
+                        基于 Flutter 开发的跨平台移动端网络拨测工具。在脱离 PC 的场景下，用手机快速验证服务器、API 及网络节点的连通性。支持 TCP / HTTP / HTTPS / ICMP 四种协议，可强制指定 IPv4/IPv6 网络栈，精准排障不误判。
+                    </p>
+                    <p class="text-yellow-500/80 text-xs mb-5 flex items-center gap-1.5">
+                        <i class="fas fa-hammer"></i>
+                        该项目目前正在积极开发中，功能持续迭代，敬请期待正式发布。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><strong>多协议拨测：</strong>TCP 端口、HTTP/HTTPS 状态码、ICMP Ping，忽略 SSL 证书错误</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><strong>双栈控制：</strong>强制 IPv4 / IPv6 / 自动，规避双栈 Fallback 误判</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><strong>并发全测：</strong>一键全测 + 随时停止，左滑单节点重测，进度实时可见</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i><strong>JSON 配置：</strong>导入即用，本地持久化，App 重启不丢失配置</li>
+                    </ul>
+                    <a href="projects/net-probe.html" class="inline-block px-6 py-2 rounded-full border border-green-500 text-green-400 hover:bg-green-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tampermonkey 脚本 -->
+    <section class="pb-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center">
+            <span class="w-2 h-7 bg-orange-500 mr-4 rounded-full"></span>
+            Tampermonkey 脚本
+        </h2>
+
+        <div class="space-y-8">
+
+            <!-- 脚本一：EBOOS 流程瓶颈透视助手 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-sky-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl aspect-video flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
+                        <i class="fas fa-stream text-5xl text-blue-400 mb-4"></i>
+                        <p class="text-gray-400 text-sm tracking-widest uppercase">EBOOS Flow Inspector</p>
+                        <div class="flex gap-3 mt-4 flex-wrap justify-center px-4">
+                            <span class="text-xs bg-blue-900/60 border border-blue-500/30 text-blue-300 px-2 py-0.5 rounded-full">待我审批</span>
+                            <span class="text-xs bg-sky-900/60 border border-sky-500/30 text-sky-300 px-2 py-0.5 rounded-full">流程看板</span>
+                            <span class="text-xs bg-indigo-900/60 border border-indigo-500/30 text-indigo-300 px-2 py-0.5 rounded-full">阻塞分析</span>
+                            <span class="text-xs bg-cyan-900/60 border border-cyan-500/30 text-cyan-300 px-2 py-0.5 rounded-full">催办</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-blue-400 font-mono text-sm">Tampermonkey / JavaScript</span>
+                        <span class="text-xs bg-orange-900/60 border border-orange-500/40 text-orange-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">EBOOS 流程瓶颈透视助手</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        注入 EBOOS 系统的工作流效率插件。右下角悬浮双按钮，一键掌握待我审批队列与我的在途流程，精准定位流程阻塞在哪个审批人手中，告别反复翻页查进度。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>待我审批：</strong>汇总所有待审流程，显示申请人、送审时间及等待时长</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>流程看板：</strong>Top 10 阻塞分布统计，精准识别卡单审批人</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>审批日志：</strong>异步加载每条流程的上步完成人与完成时间</li>
+                        <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>数据并发：</strong>三路 API 并发拉取，自动去重合并，确保数据完整</li>
+                    </ul>
+                    <a href="projects/eboos.html" class="inline-block px-6 py-2 rounded-full border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 脚本二：ITSM 快速搜索下载工具 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <div class="relative group order-1 lg:order-2">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl aspect-video flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
+                        <i class="fas fa-search text-5xl text-teal-400 mb-4"></i>
+                        <p class="text-gray-400 text-sm tracking-widest uppercase">ITSM Toolbox</p>
+                        <div class="flex gap-3 mt-4 flex-wrap justify-center px-4">
+                            <span class="text-xs bg-teal-900/60 border border-teal-500/30 text-teal-300 px-2 py-0.5 rounded-full">CMDB 搜索</span>
+                            <span class="text-xs bg-emerald-900/60 border border-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full">值班查询</span>
+                            <span class="text-xs bg-cyan-900/60 border border-cyan-500/30 text-cyan-300 px-2 py-0.5 rounded-full">网络表单</span>
+                            <span class="text-xs bg-green-900/60 border border-green-500/30 text-green-300 px-2 py-0.5 rounded-full">Excel 导出</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2 lg:order-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-teal-400 font-mono text-sm">Tampermonkey / JavaScript</span>
+                        <span class="text-xs bg-orange-900/60 border border-orange-500/40 text-orange-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">ITSM 快速搜索下载工具</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        注入 ITSM 系统的多功能工具箱。悬浮搜索按钮一键展开面板，免去繁琐页面跳转，直接完成资产搜索、资源下载、值班查看，并内置网络申请表单生成器，支持 IP 机房自动识别与 Excel 导出。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>CMDB 搜索：</strong>关键字模糊搜索资源，支持名称/IP/负责人/应用名</li>
+                        <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>一键下载：</strong>导出当前用户所有资产信息为 Excel 文件</li>
+                        <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>我的值班：</strong>自动展示本月+下月值班安排，过期自动过滤</li>
+                        <li><i class="fas fa-check-circle text-teal-500 mr-2"></i><strong>网络申请表单：</strong>IP 机房自动识别，生成标准申请表格并导出 Excel</li>
+                    </ul>
+                    <a href="projects/itsm.html" class="inline-block px-6 py-2 rounded-full border border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+            <!-- 脚本三：科管填表助手 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center glass p-6 md:p-8 rounded-3xl">
+                <div class="relative group order-1">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative glass rounded-2xl overflow-hidden shadow-2xl aspect-video flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
+                        <i class="fas fa-file-invoice text-5xl text-amber-400 mb-4"></i>
+                        <p class="text-gray-400 text-sm tracking-widest uppercase">Ke Form Assistant</p>
+                        <div class="flex gap-3 mt-4 flex-wrap justify-center px-4">
+                            <span class="text-xs bg-amber-900/60 border border-amber-500/30 text-amber-300 px-2 py-0.5 rounded-full">智能填报</span>
+                            <span class="text-xs bg-yellow-900/60 border border-yellow-500/30 text-yellow-300 px-2 py-0.5 rounded-full">行情费用</span>
+                            <span class="text-xs bg-orange-900/60 border border-orange-500/30 text-orange-300 px-2 py-0.5 rounded-full">报销提醒</span>
+                            <span class="text-xs bg-red-900/60 border border-red-500/30 text-red-300 px-2 py-0.5 rounded-full">供应商匹配</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-2">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="text-amber-400 font-mono text-sm">Tampermonkey / JavaScript</span>
+                        <span class="text-xs bg-orange-900/60 border border-orange-500/40 text-orange-300 px-2.5 py-0.5 rounded-full">
+                            <i class="fas fa-puzzle-piece text-xs mr-1"></i>油猴脚本
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">科管填表助手</h3>
+                    <p class="text-gray-400 mb-5 leading-relaxed text-sm md:text-base">
+                        注入采购管理系统的 IT 费用填报效率工具。针对行情数据授权费用的 IT 采购结果确认表，实现深沪 LEVEL2、港股、美股、恒指等多市场数据一键勾选或粘贴填报，并自动匹配供应商和项目，同步提醒未完成的 IT 类报销单。
+                    </p>
+                    <ul class="space-y-2.5 mb-7 text-sm md:text-base">
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>勾选填报：</strong>深圳/上海 LEVEL2 行情费用一键勾选，自动填入供应商与项目</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>粘贴填报：</strong>港股/美股/恒指/芝加哥等数据粘贴解析，智能拆分多市场费用</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>智能匹配：</strong>内置市场-供应商-项目数据库，自动填入对应字段，零手动输入</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i><strong>报销提醒：</strong>登录时自动检测并提醒未完成的 IT 类电子报销单</li>
+                    </ul>
+                    <a href="projects/ke.html" class="inline-block px-6 py-2 rounded-full border border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-white transition text-sm md:text-base">
+                        查看详情
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-800 text-center px-6">
+        <div class="flex justify-center space-x-6 mb-4 text-gray-400 text-xl">
+            <a href="mailto:andy@hi-andy.com" class="hover:text-blue-400 transition" title="发送邮件">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://hi-andy.com" target="_blank" class="hover:text-blue-400 transition" title="个人博客">
+                <i class="fas fa-globe"></i>
+            </a>
+            <a href="https://www.youtube.com/@%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E7%9A%84%E5%AE%89%E8%BF%AA" target="_blank" class="hover:text-red-500 transition" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        <p class="text-gray-600 text-sm">© 2026 Andy Hou · Built with Vibe Coding on GitHub Pages.</p>
+    </footer>
+
+    <script>
+        function toggleQR(id) {
+            const el = document.getElementById('qr-' + id);
+            document.querySelectorAll('.qr-popup').forEach(qr => {
+                if (qr.id !== 'qr-' + id) qr.classList.remove('active');
+            });
+            el.classList.toggle('active');
+        }
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.relative')) {
+                document.querySelectorAll('.qr-popup').forEach(qr => qr.classList.remove('active'));
+            }
+        });
+    </script>
+
+</body>
+</html>
